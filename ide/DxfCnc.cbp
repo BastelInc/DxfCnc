@@ -17,7 +17,7 @@
 					<Add option="-g" />
 					<Add option="`fltk-config --cxxflags`" />
 					<Add option="-fpermissive" />
-					<Add option="-DNATIVE_FILECHOOSER" />
+					<Add option="-DNIX_NATIVE_FILECHOOSER" />
 					<Add option="-DBLOCKSIMULATION" />
 					<Add directory="../include" />
 				</Compiler>
@@ -50,7 +50,6 @@
 					<Add option="-s" />
 				</Compiler>
 				<Linker>
-					<Add library="z" />
 					<Add library="z" />
 				</Linker>
 			</Target>

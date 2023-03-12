@@ -4340,6 +4340,7 @@ int CToolBox ::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
       StopCNC();
       break;
     case IDM_FILEOPEN: {
+      ShowTab(IDM_FILEOPEN);
       if(ParamModify && FltkMessageBox("Parameter Speichern", "", MB_YESNO | MB_ICONQUESTION) == IDYES) {
         InitSpeichern();
         ParamModify = 0;
