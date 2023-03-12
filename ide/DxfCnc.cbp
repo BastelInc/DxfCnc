@@ -19,7 +19,7 @@
 					<Add option="-fpermissive" />
 					<Add option="-DNATIVE_FILECHOOSER" />
 					<Add option="-DBLOCKSIMULATION" />
-					<Add directory="Comm" />
+					<Add directory="../include" />
 				</Compiler>
 				<Linker>
 					<Add library="z" />
@@ -34,7 +34,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-s" />
-					<Add directory="Comm" />
+					<Add directory="../include" />
 				</Compiler>
 				<Linker>
 					<Add library="z" />
@@ -45,42 +45,13 @@
 				<Option object_output="Debug/" />
 				<Option type="1" />
 				<Option compiler="msvc8" />
-				<Option projectCompilerOptionsRelation="1" />
-				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
-					<Add option="/MDd" />
-					<Add option="`fltk-config --cxxflags`" />
-					<Add option="-DFRAMEBUFFER" />
-					<Add option="-DFLTK" />
-					<Add option="-DSERIALCOM" />
-					<Add option="/DWIN32" />
-					<Add directory="Comm" />
-					<Add directory="D:/wrk/Dxfcnc" />
-					<Add directory="D:/wrk/fltk" />
-					<Add directory="D:/wrk/glew-2.1.0/include" />
-					<Add directory="include" />
-					<Add directory="." />
-					<Add directory="../" />
+					<Add option="-O2" />
+					<Add option="-s" />
 				</Compiler>
 				<Linker>
-					<Add library="opengl32.lib" />
-					<Add library="glu32.lib" />
-					<Add library="comctl32.lib" />
-					<Add library="kernel32.lib" />
-					<Add library="user32.lib" />
-					<Add library="gdi32.lib" />
-					<Add library="winspool.lib" />
-					<Add library="comdlg32.lib" />
-					<Add library="advapi32.lib" />
-					<Add library="shell32.lib" />
-					<Add library="ole32.lib" />
-					<Add library="oleaut32.lib" />
-					<Add library="uuid.lib" />
-					<Add library="D:/wrk/fltk/lib/vc15/fltkd.lib" />
-					<Add library="D:/wrk/fltk/lib/vc15/fltkgld.lib" />
-					<Add library="D:/wrk/fltk/lib/vc15/fltkjpegd.lib" />
-					<Add library="D:/wrk/fltk/lib/vc15/fltkpngd.lib" />
-					<Add library="D:/wrk/fltk/lib/vc15/fltkzlibd.lib" />
+					<Add library="z" />
+					<Add library="z" />
 				</Linker>
 			</Target>
 		</Build>
@@ -118,51 +89,51 @@
 			<Add library="X11" />
 			<Add library="z" />
 		</Linker>
+		<Unit filename="../include/BastelUtils.h" />
+		<Unit filename="../include/DXF3DDisplayUtils.h" />
+		<Unit filename="../include/FileFolder.h" />
+		<Unit filename="../include/FingerScroll.h" />
+		<Unit filename="../include/FltkDialogBox.h" />
+		<Unit filename="../include/FltkWindow.h" />
+		<Unit filename="../include/GlDisplay.h" />
+		<Unit filename="../include/Layers.h" />
+		<Unit filename="../include/LonMessage.h" />
+		<Unit filename="../include/MatrixTransform.h" />
+		<Unit filename="../include/Object.h" />
+		<Unit filename="../include/ProgressStatus.h" />
+		<Unit filename="../include/Resource.h" />
+		<Unit filename="../include/Serialcom.h" />
+		<Unit filename="../include/Settings.h" />
+		<Unit filename="../include/TreeView.h" />
+		<Unit filename="../include/basteltype.h" />
+		<Unit filename="../include/clipper.h" />
+		<Unit filename="../include/glew.h" />
 		<Unit filename="../src/BastelUtils.cpp" />
 		<Unit filename="../src/BlockModel.cpp" />
 		<Unit filename="../src/CncSetup.cpp" />
 		<Unit filename="../src/CncSetup.h" />
-		<Unit filename="../include/DXF3DDisplayUtils.h" />
 		<Unit filename="../src/DxfCnc.cpp" />
 		<Unit filename="../src/Edit.cpp" />
 		<Unit filename="../src/Execute.cpp" />
 		<Unit filename="../src/FileFolder.cpp" />
-		<Unit filename="../include/FileFolder.h" />
 		<Unit filename="../src/FingerScroll.cpp" />
-		<Unit filename="../include/FingerScroll.h" />
 		<Unit filename="../src/FltkDialogBox.cpp" />
-		<Unit filename="../include/FltkDialogBox.h" />
 		<Unit filename="../src/FltkWindow.cpp" />
-		<Unit filename="../include/FltkWindow.h" />
 		<Unit filename="../src/GCodeObject.cpp" />
 		<Unit filename="../src/GlDisplay.cpp" />
-		<Unit filename="../include/GlDisplay.h" />
 		<Unit filename="../src/Layers.cpp" />
-		<Unit filename="../include/Layers.h" />
 		<Unit filename="../src/LonMessage.cpp" />
-		<Unit filename="../include/LonMessage.h" />
 		<Unit filename="../src/MatrixTransform.cpp" />
-		<Unit filename="../include/MatrixTransform.h" />
 		<Unit filename="../src/Object.cpp" />
-		<Unit filename="../include/Object.h" />
 		<Unit filename="../src/ObjectDraw.cpp" />
 		<Unit filename="../src/PolygonObject.cpp" />
 		<Unit filename="../src/ProgressStatus.cpp" />
-		<Unit filename="../include/ProgressStatus.h" />
 		<Unit filename="../src/Resource.cpp" />
-		<Unit filename="../include/Resource.h" />
 		<Unit filename="../src/Serialcom.cpp" />
-		<Unit filename="../include/Serialcom.h" />
 		<Unit filename="../src/Settings.cpp" />
-		<Unit filename="../include/Settings.h" />
 		<Unit filename="../src/Simplex.cpp" />
 		<Unit filename="../src/TreeView.cpp" />
-		<Unit filename="../include/TreeView.h" />
 		<Unit filename="../src/clipper.cpp" />
-		<Unit filename="../include/clipper.h" />
-		<Unit filename="../include/glew.h" />
-		<Unit filename="../include/BastelUtils.h" />
-		<Unit filename="../include/basteltype.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

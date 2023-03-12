@@ -1,0 +1,619 @@
+# depslib dependency file v1.0
+1674579632 source:/home/rolf/d/wrk/DxfCnc/src/Edit.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<errno.h>
+	<FL/Fl.H>
+	<FL/x.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Double_Window.H>
+	<FL/fl_ask.H>
+	<FL/Fl_Native_File_Chooser.H>
+	<FL/Fl_Menu_Bar.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Return_Button.H>
+	<FL/Fl_Text_Buffer.H>
+	<FL/Fl_Text_Editor.H>
+	<FL/filename.H>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/BastelUtils.cpp
+	"basteltype.h"
+	"BastelUtils.h"
+	<direct.h>
+
+1671447396 /home/rolf/d/wrk/DxfCnc/include/basteltype.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<unistd.h>
+	<errno.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<pthread.h>
+	<windows.h>
+	<windowsx.h>
+	<time.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<sys/timeb.h>
+	<string.h>
+	<fcntl.h>
+	<io.h>
+
+1671447396 /home/rolf/d/wrk/DxfCnc/include/BastelUtils.h
+	"basteltype.h"
+	<ctype.h>
+
+1642861338 source:/home/rolf/d/wrk/DxfCnc/src/clipper.cpp
+	"clipper.h"
+	<cmath>
+	<vector>
+	<algorithm>
+	<stdexcept>
+	<cstring>
+	<cstdlib>
+	<ostream>
+	<functional>
+
+1668877116 /home/rolf/d/wrk/DxfCnc/include/clipper.h
+	<vector>
+	<set>
+	<stdexcept>
+	<cstring>
+	<cstdlib>
+	<ostream>
+	<functional>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/FingerScroll.cpp
+	"FingerScroll.h"
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	"BastelUtils.h"
+	"GlDisplay.h"
+	"TouchLib.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdarg.h>
+	<unistd.h>
+	<dirent.h>
+	<math.h>
+	<pthread.h>
+	<linux/fb.h>
+	<fcntl.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<sys/stat.h>
+	<sys/poll.h>
+	<linux/input.h>
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/FingerScroll.h
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Pack.H>
+
+1670173748 /home/rolf/d/wrk/DxfCnc/include/GlDisplay.h
+	<stdarg.h>
+	"include/BastelUtils.h"
+	<FL/Fl.H>
+	<FL/x.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Gl_Window.H>
+	"Layers.h"
+
+1671447396 /home/rolf/d/wrk/DxfCnc//include/BastelUtils.h
+	"basteltype.h"
+	<ctype.h>
+
+1671447396 /home/rolf/d/wrk/DxfCnc//include/basteltype.h
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	<unistd.h>
+	<errno.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<pthread.h>
+	<windows.h>
+	<windowsx.h>
+	<time.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<sys/timeb.h>
+	<string.h>
+	<fcntl.h>
+	<io.h>
+
+1646468908 /home/rolf/d/wrk/DxfCnc/include/Layers.h
+	<FL/Fl.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Box.H>
+	"FingerScroll.h"
+	"TreeView.h"
+
+1668520928 /home/rolf/d/wrk/DxfCnc/include/TreeView.h
+	<basteltype.h>
+	<FL/Fl_Toggle_Button.H>
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Pack.H>
+
+1642861342 /home/rolf/d/wrk/DxfCnc/include/TouchLib.h
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/FltkDialogBox.cpp
+	"FltkDialogBox.h"
+	<FL/Fl_Toggle_Button.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Radio_Button.H>
+	<FL/Fl_Light_Button.H>
+	<FL/Fl_Input.H>
+	<FL/Fl.H>
+	<FL/fl_draw.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Value_Slider.H>
+	<FL/Fl_Counter.H>
+	<FL/Fl_Roller.H>
+	<FL/math.h>
+	<FL/Fl.H>
+	<FL/Fl_Counter.H>
+	<FL/fl_draw.H>
+
+1670171720 /home/rolf/d/wrk/DxfCnc/include/FltkDialogBox.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<FL/Fl_Tile.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Pack.H>
+	<FL/Fl_Browser.H>
+	"FltkWindow.h"
+	"include/BastelUtils.h"
+
+1642861342 /home/rolf/d/wrk/DxfCnc/include/FltkWindow.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<FL/Fl_Tile.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Pack.H>
+	<FL/Fl_Browser.H>
+	"include/BastelUtils.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/BlockModel.cpp
+	"BastelUtils.h"
+	"CncSetup.h"
+	"DxfCnc.h"
+	"FileFolder.h"
+	"FltkDialogBox.h"
+	"GlDisplay.h"
+	"Layers.h"
+	"Object.h"
+	"ProgressStatus.h"
+	"Resource.h"
+	"Serialcom.h"
+	"Settings.h"
+	<FL/Fl.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Counter.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Value_Slider.H>
+	<FL/fl_ask.H>
+	<FL/fl_draw.H>
+	<FL/fl_show_colormap.H>
+	<ctype.h>
+	<math.h>
+
+1671641952 /home/rolf/d/wrk/DxfCnc/include/CncSetup.h
+	"FltkWindow.h"
+	"FltkDialogBox.h"
+	"FingerScroll.h"
+	"Layers.h"
+	<FL/Fl_Choice.H>
+
+1676827464 /home/rolf/d/wrk/DxfCnc/include/DxfCnc.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<FL/Fl_Tile.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Pack.H>
+	<FL/Fl_Browser.H>
+	<FL/Fl_Progress.H>
+	<FL/Fl_Gl_Window.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Native_File_Chooser.H>
+	"include/BastelUtils.h"
+	"CncSetup.h"
+	"BlockModel.h"
+	"Settings.h"
+	"TreeView.h"
+
+1675864168 /home/rolf/d/wrk/DxfCnc/include/BlockModel.h
+	"FltkWindow.h"
+	"FltkDialogBox.h"
+	"FingerScroll.h"
+	"Layers.h"
+	<FL/Fl_Choice.H>
+	"Object.h"
+	<GL/glew.h>
+
+1675864137 /home/rolf/d/wrk/DxfCnc/include/Object.h
+	"basteltype.h"
+	"Layers.h"
+	"clipper.h"
+	<GL/glew.h>
+
+1671642994 /home/rolf/d/wrk/DxfCnc/include/Settings.h
+	<FL/Fl_Preferences.H>
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/FileFolder.h
+	"TreeView.h"
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/ProgressStatus.h
+
+1674470818 /home/rolf/d/wrk/DxfCnc/include/Resource.h
+	<FL/Fl.H>
+	<FL/Fl_Image.H>
+	<FL/Fl_Pixmap.H>
+	<FL/Fl_RGB_Image.H>
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/Serialcom.h
+
+1678639705 source:/home/rolf/d/wrk/DxfCnc/src/CncSetup.cpp
+	"BastelUtils.h"
+	"CncSetup.h"
+	"DxfCnc.h"
+	"FileFolder.h"
+	"FltkDialogBox.h"
+	"GlDisplay.h"
+	"Layers.h"
+	"Object.h"
+	"ProgressStatus.h"
+	"Resource.h"
+	"Serialcom.h"
+	"Settings.h"
+	<FL/Fl.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Counter.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Scroll.H>
+	<FL/Fl_Value_Slider.H>
+	<FL/fl_ask.H>
+	<FL/fl_draw.H>
+	<ctype.h>
+	<math.h>
+	"LonMessage.h"
+
+1632676694 /home/rolf/d/wrk/DxfCnc/include/LonMessage.h
+	"include/BastelUtils.h"
+	"NNetmgmt.h"
+	<winsock.h>
+	<netinet/in.h>
+
+1632676700 /home/rolf/d/wrk/DxfCnc/include/NNetmgmt.h
+
+1678637089 source:/home/rolf/d/wrk/DxfCnc/src/DxfCnc.cpp
+	<stdlib.h>
+	<stdlib.h>
+	<stdio.h>
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Overlay_Window.H>
+	<FL/Fl_Button.H>
+	<FL/fl_draw.H>
+	<FL/Fl_Widget.H>
+	<FL/Fl_Progress.H>
+	<FL/Fl_Light_Button.H>
+	<FL/Fl_Double_Window.H>
+	<FL/Fl_Value_Slider.H>
+	<FL/Fl_Pack.H>
+	<FL/Fl_Box.H>
+	"FingerScroll.h"
+	<FL/fl_ask.H>
+	<FL/Fl_Preferences.H>
+	<FL/Fl_RGB_Image.H>
+	<math.h>
+	<vector>
+	"Resource.h"
+	"DxfCnc.h"
+	"Object.h"
+	"GlDisplay.h"
+	"CncSetup.h"
+	"FltkWindow.h"
+	"include/BastelUtils.h"
+	"CVisual_Pad.h"
+	"FileFolder.h"
+	"Serialcom.h"
+	"LonMessage.h"
+	"CommSnapMaker.h"
+	"ProgressStatus.h"
+	<DBT.h>
+	<signal.h>
+
+1671447396 /home/rolf/d/wrk/DxfCnc/include/CVisual_Pad.h
+	<FL/Fl_Overlay_Window.H>
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/CommSnapMaker.h
+	<stdio.h>
+	<FltkWindow.h>
+	"Serialcom.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/Execute.cpp
+	"CncSetup.h"
+	"DxfCnc.h"
+	"GlDisplay.h"
+	"Object.h"
+	"Resource.h"
+	"Serialcom.h"
+	"Settings.h"
+	<math.h>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/FileFolder.cpp
+	<string.h>
+	"FileFolder.h"
+	"Resource.h"
+	<dirent.h>
+	"DxfCnc.h"
+	"Object.h"
+	"GlDisplay.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/FltkWindow.cpp
+	"FltkWindow.h"
+	<FL/fl_draw.H>
+	"Resource.h"
+	"include/BastelUtils.h"
+	"CncSetup.h"
+	<FL/Fl_Preferences.H>
+	<FL/Fl_Color_Chooser.H>
+	<FL/Fl_Native_File_Chooser.H>
+	<FL/Fl_File_Chooser.H>
+	<sys/utime.h>
+	<utime.h>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/GCodeObject.cpp
+	"GCodeObject.h"
+	"Object.h"
+	"Resource.h"
+	"stdlib.h"
+	<FL/Fl_Value_Slider.H>
+	<math.h>
+	<sys/stat.h>
+	"DxfCnc.h"
+	"GCodeDown.h"
+	"GlDisplay.h"
+	"Serialcom.h"
+	"Settings.h"
+
+1675864095 /home/rolf/d/wrk/DxfCnc/include/GCodeObject.h
+	"Layers.h"
+	"basteltype.h"
+	"Object.h"
+	"clipper.h"
+	<cstdlib>
+	<cstring>
+	<functional>
+	<ostream>
+	<set>
+	<stdexcept>
+	<vector>
+
+1676827514 /home/rolf/d/wrk/DxfCnc/include/GCodeDown.h
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<FL/Fl_Tile.H>
+	<FL/Fl_Group.H>
+	<FL/Fl_Button.H>
+	<FL/Fl_Tabs.H>
+	<FL/Fl_Pack.H>
+	<FL/Fl_Browser.H>
+	<FL/Fl_Progress.H>
+	<FL/Fl_Gl_Window.H>
+	<FL/Fl_Input.H>
+	<FL/Fl_Box.H>
+	<FL/Fl_Native_File_Chooser.H>
+	"include/BastelUtils.h"
+	"CncSetup.h"
+	"Settings.h"
+	"TreeView.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/GlDisplay.cpp
+	<GL/glew.h>
+	<FL/math.h>
+	<math.h>
+	"Settings.h"
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/gl.h>
+	<FL/Fl_Gl_Window.H>
+	"GlDisplay.h"
+	"DXF3DDisplayUtils.h"
+	"Object.h"
+	"clipper.h"
+	"Serialcom.h"
+	"DxfCnc.h"
+	"Tree.h"
+
+1646038914 /home/rolf/d/wrk/DxfCnc/include/DXF3DDisplayUtils.h
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/Tree.h
+	"TreeView.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/Layers.cpp
+	<FL/fl_draw.H>
+	"TreeView.h"
+	"Layers.h"
+	"Resource.h"
+	"Object.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/LonMessage.cpp
+	"include/BastelUtils.h"
+	"LonMessage.h"
+	"CncSetup.h"
+	<stdio.h>
+	<sys/types.h>
+	<winsock.h>
+	<netinet/in.h>
+	<sys/socket.h>
+	<netdb.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<stdlib.h>
+
+1642861342 source:/home/rolf/d/wrk/DxfCnc/src/MatrixTransform.cpp
+	<math.h>
+	<string.h>
+	"MatrixTransform.h"
+
+1642861344 /home/rolf/d/wrk/DxfCnc/include/MatrixTransform.h
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/Object.cpp
+	"Object.h"
+	"stdlib.h"
+	"Resource.h"
+	"DxfCnc.h"
+	"GlDisplay.h"
+	"Settings.h"
+	<math.h>
+	<sys/stat.h>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/ObjectDraw.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<vector>
+	<iostream>
+	<fstream>
+	<algorithm>
+	<sstream>
+	<math.h>
+	<GL/glew.h>
+	<GL/glew.h>
+	"MatrixTransform.h"
+	"Object.h"
+	"Settings.h"
+	"GlDisplay.h"
+	"clipper.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/PolygonObject.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<vector>
+	<iostream>
+	<fstream>
+	<algorithm>
+	<sstream>
+	<math.h>
+	<GL/glew.h>
+	<GL/glew.h>
+	"MatrixTransform.h"
+	"GlDisplay.h"
+	"Object.h"
+	"clipper.h"
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/ProgressStatus.cpp
+	"BastelUtils.h"
+	"ProgressStatus.h"
+	<FL/Fl.H>
+	<FL/Fl_Progress.H>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/Serialcom.cpp
+	<stdio.h>
+	"FltkWindow.h"
+	"Serialcom.h"
+	<termios.h>
+	<sys/poll.h>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/Settings.cpp
+	"Settings.h"
+	"BastelUtils.h"
+	<FL/Enumerations.H>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/Simplex.cpp
+	"Settings.h"
+	<math.h>
+
+1678637564 source:/home/rolf/d/wrk/DxfCnc/src/TreeView.cpp
+	"TreeView.h"
+	"Resource.h"
+	<FL/Fl.H>
+	<FL/Fl_Double_Window.H>
+	<FL/Fl_Tree.H>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdarg.h>
+	<unistd.h>
+	<dirent.h>
+	<pthread.h>
+	<malloc.h>
+	"BastelUtils.h"
+
+1678638049 source:/home/rolf/d/wrk/DxfCnc/src/Resource.cpp
+	"Resource.h"
+	"icons/AppIcon.xpm"
+	"icons/AppIconSettings.xpm"
+	"icons/Dxf3TableTree.xpm"
+	"icons/AppIcon.xpm"
+	"icons/Dxfcnc.xpm"
+	"icons/Exit.xpm"
+	"icons/Comm0.xpm"
+	"icons/Comm1.xpm"
+	"icons/FullSize.xpm"
+	"icons/TreeViewPics44.xpm"
+	"icons/Database.xpm"
+	"icons/OpenData.xpm"
+	"icons/Appssystem.xpm"
+	"icons/Adjust.xpm"
+	"icons/GcodeVelo.xpm"
+	"icons/Isel.xpm"
+	"icons/GoCnc.xpm"
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/AppIcon.xpm
+
+1646835694 /home/rolf/d/wrk/DxfCnc//icons/AppIconSettings.xpm
+
+1646761148 /home/rolf/d/wrk/DxfCnc//icons/Dxf3TableTree.xpm
+
+1632676700 /home/rolf/d/wrk/DxfCnc//icons/Dxfcnc.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/Exit.xpm
+
+1632676700 /home/rolf/d/wrk/DxfCnc//icons/Comm0.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/Comm1.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/FullSize.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/TreeViewPics44.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/Database.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/OpenData.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/Appssystem.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/Adjust.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/GcodeVelo.xpm
+
+1632676698 /home/rolf/d/wrk/DxfCnc//icons/Isel.xpm
+
+1632676700 /home/rolf/d/wrk/DxfCnc//icons/GoCnc.xpm
+
