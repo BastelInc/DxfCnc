@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="DxfCnc" Version="11000">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="include">
+    <File Name="BlockModel.h"/>
+    <File Name="Settings.h"/>
+    <File Name="Layers.h"/>
+    <File Name="GlDisplay.h"/>
+    <File Name="Tree.h"/>
+    <File Name="Object.h"/>
+    <File Name="CncSetup.h"/>
+    <File Name="include/basteltype.h"/>
+    <File Name="include/BastelUtils.h"/>
+    <File Name="glew.h"/>
+    <File Name="clipper.h"/>
+    <File Name="TreeView.h"/>
+    <File Name="Serialcom.h"/>
+    <File Name="Resource.h"/>
+    <File Name="ProgressStatus.h"/>
+    <File Name="MatrixTransform.h"/>
+    <File Name="LonMessage.h"/>
+    <File Name="FltkWindow.h"/>
+    <File Name="FltkDialogBox.h"/>
+    <File Name="FingerScroll.h"/>
+    <File Name="FileFolder.h"/>
+    <File Name="DxfCnc.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="src">
+    <File Name="BlockModel.cpp"/>
+    <File Name="GCodeObject.cpp"/>
+    <File Name="Layers.cpp"/>
+    <File Name="Settings.cpp"/>
+    <File Name="PolygonObject.cpp"/>
+    <File Name="ObjectDraw.cpp"/>
+    <File Name="GlDisplay.cpp"/>
+    <File Name="Simplex.cpp"/>
+    <File Name="Object.cpp"/>
+    <File Name="Execute.cpp"/>
+    <File Name="Edit.cpp"/>
+    <File Name="CncSetup.cpp"/>
+    <File Name="clipper.cpp"/>
+    <File Name="TreeView.cpp"/>
+    <File Name="Serialcom.cpp"/>
+    <File Name="Resource.cpp"/>
+    <File Name="ProgressStatus.cpp"/>
+    <File Name="MatrixTransform.cpp"/>
+    <File Name="LonMessage.cpp"/>
+    <File Name="FltkWindow.cpp"/>
+    <File Name="FltkDialogBox.cpp"/>
+    <File Name="FingerScroll.cpp"/>
+    <File Name="FileFolder.cpp"/>
+    <File Name="DxfCnc.cpp"/>
+    <File Name="BastelUtils.cpp"/>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
+  <Dependencies Name="Win32"/>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g `fltk-config --cxxflags` -fpermissive -DNATIVE_FILECHOOSER `fltk-config --cxxflags` -UWIN32 -DFLTK -DSERIALCOM  -UUSE_SHADER -DBLOCKSIMULATION" C_Options="-g `fltk-config --cxxflags` -fpermissive -DNATIVE_FILECHOOSER `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="Comm"/>
+        <IncludePath Value="/home/rolf/wrk/glew-2.1.0/include"/>
+        <IncludePath Value="NeuronComm"/>
+        <IncludePath Value="include"/>
+        <IncludePath Value="."/>
+        <IncludePath Value="/usr/local/include"/>
+        <IncludePath Value="/usr/include/freetype2"/>
+        <IncludePath Value="/usr/include/libpng16"/>
+        <IncludePath Value="../"/>
+        <IncludePath Value="Comm"/>
+        <Preprocessor Value="FINGERSCROLL"/>
+      </Compiler>
+      <Linker Options="-O0" Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+        <Library Value="GLEW"/>
+        <Library Value="GLU"/>
+        <Library Value="pthread"/>
+        <Library Value="libfltk_gl"/>
+        <Library Value="libfltk"/>
+        <Library Value="GL"/>
+        <Library Value="rt"/>
+        <Library Value="dl"/>
+        <Library Value="png"/>
+        <Library Value="z"/>
+        <Library Value="jpeg"/>
+        <Library Value="fontconfig"/>
+        <Library Value="Xrender"/>
+        <Library Value="Xcursor"/>
+        <Library Value="Xfixes"/>
+        <Library Value="Xext"/>
+        <Library Value="Xinerama"/>
+        <Library Value="m"/>
+        <Library Value="X11"/>
+        <Library Value="Xft"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="Debug/dxfcnc" IntermediateDirectory="./Debug" Command="./dxfcnc" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="Debug" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-O2 -s `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " C_Options="-O2 -s `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="Comm"/>
+        <IncludePath Value="/home/rolf/wrk/glew-2.1.0/include"/>
+        <IncludePath Value="NeuronComm"/>
+        <IncludePath Value="include"/>
+        <IncludePath Value="."/>
+        <IncludePath Value="/usr/local/include"/>
+        <IncludePath Value="/usr/include/freetype2"/>
+        <IncludePath Value="/usr/include/libpng16"/>
+        <IncludePath Value="../"/>
+        <IncludePath Value="Comm"/>
+        <Preprocessor Value="FINGERSCROLL"/>
+      </Compiler>
+      <Linker Options="-O0" Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+        <Library Value="GLEW"/>
+        <Library Value="GLU"/>
+        <Library Value="pthread"/>
+        <Library Value="libfltk_gl.a"/>
+        <Library Value="libfltk.a"/>
+        <Library Value="GL"/>
+        <Library Value="rt"/>
+        <Library Value="dl"/>
+        <Library Value="png"/>
+        <Library Value="z"/>
+        <Library Value="jpeg"/>
+        <Library Value="Xrender"/>
+        <Library Value="Xcursor"/>
+        <Library Value="Xfixes"/>
+        <Library Value="Xext"/>
+        <Library Value="Xinerama"/>
+        <Library Value="m"/>
+        <Library Value="X11"/>
+        <Library Value="fontconfig"/>
+        <Library Value="Xft"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="Release/dxfcnc" IntermediateDirectory="./Debug" Command="./dxfcnc" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="Release" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Win32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="/MDd `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM /DWIN32 `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " C_Options="/MDd `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM /DWIN32 `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="Comm"/>
+        <IncludePath Value="D:/wrk/Dxfcnc"/>
+        <IncludePath Value="D:/wrk/fltk"/>
+        <IncludePath Value="D:/wrk/glew-2.1.0/include"/>
+        <IncludePath Value="include"/>
+        <IncludePath Value="."/>
+        <IncludePath Value="../"/>
+        <IncludePath Value="/home/rolf/wrk/glew-2.1.0/include"/>
+        <IncludePath Value="NeuronComm"/>
+        <IncludePath Value="include"/>
+        <IncludePath Value="."/>
+        <IncludePath Value="/usr/local/include"/>
+        <IncludePath Value="/usr/include/freetype2"/>
+        <IncludePath Value="/usr/include/libpng16"/>
+        <IncludePath Value="../"/>
+        <IncludePath Value="Comm"/>
+      </Compiler>
+      <Linker Options="-O0" Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+        <Library Value="opengl32.a"/>
+        <Library Value="glu32.a"/>
+        <Library Value="comctl32.a"/>
+        <Library Value="kernel32.a"/>
+        <Library Value="user32.a"/>
+        <Library Value="gdi32.a"/>
+        <Library Value="winspool.a"/>
+        <Library Value="comdlg32.a"/>
+        <Library Value="advapi32.a"/>
+        <Library Value="shell32.a"/>
+        <Library Value="ole32.a"/>
+        <Library Value="oleaut32.a"/>
+        <Library Value="uuid.a"/>
+        <Library Value="D:/wrk/fltk/lib/vc15/fltkd.a"/>
+        <Library Value="D:/wrk/fltk/lib/vc15/fltkgld.a"/>
+        <Library Value="D:/wrk/fltk/lib/vc15/fltkjpegd.a"/>
+        <Library Value="D:/wrk/fltk/lib/vc15/fltkpngd.a"/>
+        <Library Value="D:/wrk/fltk/lib/vc15/fltkzlibd.a"/>
+        <Library Value="GLU"/>
+        <Library Value="usb-1.0"/>
+        <Library Value="pthread"/>
+        <Library Value="libfltk_gl.a"/>
+        <Library Value="libfltk.a"/>
+        <Library Value="GL"/>
+        <Library Value="Xrender"/>
+        <Library Value="Xcursor"/>
+        <Library Value="Xfixes"/>
+        <Library Value="Xext"/>
+        <Library Value="Xft"/>
+        <Library Value="fontconfig"/>
+        <Library Value="Xinerama"/>
+        <Library Value="dl"/>
+        <Library Value="m"/>
+        <Library Value="X11"/>
+        <Library Value="z"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="Debug/dxfcnc" IntermediateDirectory="./Debug" Command="./dxfcnc" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="Debug" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

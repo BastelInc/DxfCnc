@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="DxfCnc" />
+		<Option pch_mode="2" />
+		<Option compiler="msvc8" />
+		<Build>
+			<Target title="Debug">
+				<Option output="Debug/dxfcnc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="MESA_GL_VERSION_OVERRIDE=3.3" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="`fltk-config --cxxflags`" />
+					<Add option="-fpermissive" />
+					<Add option="-DNATIVE_FILECHOOSER" />
+					<Add option="-DBLOCKSIMULATION" />
+					<Add directory="Comm" />
+				</Compiler>
+				<Linker>
+					<Add library="z" />
+					<Add library="GLEW" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="Release/dxfcnc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-s" />
+					<Add directory="Comm" />
+				</Compiler>
+				<Linker>
+					<Add library="z" />
+				</Linker>
+			</Target>
+			<Target title="Win32">
+				<Option output="Debug/dxfcnc" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug/" />
+				<Option type="1" />
+				<Option compiler="msvc8" />
+				<Option projectCompilerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Compiler>
+					<Add option="/MDd" />
+					<Add option="`fltk-config --cxxflags`" />
+					<Add option="-DFRAMEBUFFER" />
+					<Add option="-DFLTK" />
+					<Add option="-DSERIALCOM" />
+					<Add option="/DWIN32" />
+					<Add directory="Comm" />
+					<Add directory="D:/wrk/Dxfcnc" />
+					<Add directory="D:/wrk/fltk" />
+					<Add directory="D:/wrk/glew-2.1.0/include" />
+					<Add directory="include" />
+					<Add directory="." />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add library="opengl32.lib" />
+					<Add library="glu32.lib" />
+					<Add library="comctl32.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="D:/wrk/fltk/lib/vc15/fltkd.lib" />
+					<Add library="D:/wrk/fltk/lib/vc15/fltkgld.lib" />
+					<Add library="D:/wrk/fltk/lib/vc15/fltkjpegd.lib" />
+					<Add library="D:/wrk/fltk/lib/vc15/fltkpngd.lib" />
+					<Add library="D:/wrk/fltk/lib/vc15/fltkzlibd.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`fltk-config --cxxflags`" />
+			<Add option="-DFRAMEBUFFER" />
+			<Add option="-DFLTK" />
+			<Add option="-DSERIALCOM" />
+			<Add directory="/home/rolf/wrk/glew-2.1.0/include" />
+			<Add directory="NeuronComm" />
+			<Add directory="include" />
+			<Add directory="." />
+			<Add directory="/usr/local/include" />
+			<Add directory="/usr/include/freetype2" />
+			<Add directory="/usr/include/libpng16" />
+			<Add directory="../" />
+			<Add directory="Comm" />
+		</Compiler>
+		<Linker>
+			<Add library="GLU" />
+			<Add library="usb-1.0" />
+			<Add library="pthread" />
+			<Add library="libfltk_gl.a" />
+			<Add library="libfltk.a" />
+			<Add library="GL" />
+			<Add library="Xrender" />
+			<Add library="Xcursor" />
+			<Add library="Xfixes" />
+			<Add library="Xext" />
+			<Add library="Xft" />
+			<Add library="fontconfig" />
+			<Add library="Xinerama" />
+			<Add library="dl" />
+			<Add library="m" />
+			<Add library="X11" />
+			<Add library="z" />
+		</Linker>
+		<Unit filename="../src/BastelUtils.cpp" />
+		<Unit filename="../src/BlockModel.cpp" />
+		<Unit filename="../src/CncSetup.cpp" />
+		<Unit filename="../src/CncSetup.h" />
+		<Unit filename="../include/DXF3DDisplayUtils.h" />
+		<Unit filename="../src/DxfCnc.cpp" />
+		<Unit filename="../src/Edit.cpp" />
+		<Unit filename="../src/Execute.cpp" />
+		<Unit filename="../src/FileFolder.cpp" />
+		<Unit filename="../include/FileFolder.h" />
+		<Unit filename="../src/FingerScroll.cpp" />
+		<Unit filename="../include/FingerScroll.h" />
+		<Unit filename="../src/FltkDialogBox.cpp" />
+		<Unit filename="../include/FltkDialogBox.h" />
+		<Unit filename="../src/FltkWindow.cpp" />
+		<Unit filename="../include/FltkWindow.h" />
+		<Unit filename="../src/GCodeObject.cpp" />
+		<Unit filename="../src/GlDisplay.cpp" />
+		<Unit filename="../include/GlDisplay.h" />
+		<Unit filename="../src/Layers.cpp" />
+		<Unit filename="../include/Layers.h" />
+		<Unit filename="../src/LonMessage.cpp" />
+		<Unit filename="../include/LonMessage.h" />
+		<Unit filename="../src/MatrixTransform.cpp" />
+		<Unit filename="../include/MatrixTransform.h" />
+		<Unit filename="../src/Object.cpp" />
+		<Unit filename="../include/Object.h" />
+		<Unit filename="../src/ObjectDraw.cpp" />
+		<Unit filename="../src/PolygonObject.cpp" />
+		<Unit filename="../src/ProgressStatus.cpp" />
+		<Unit filename="../include/ProgressStatus.h" />
+		<Unit filename="../src/Resource.cpp" />
+		<Unit filename="../include/Resource.h" />
+		<Unit filename="../src/Serialcom.cpp" />
+		<Unit filename="../include/Serialcom.h" />
+		<Unit filename="../src/Settings.cpp" />
+		<Unit filename="../include/Settings.h" />
+		<Unit filename="../src/Simplex.cpp" />
+		<Unit filename="../src/TreeView.cpp" />
+		<Unit filename="../include/TreeView.h" />
+		<Unit filename="../src/clipper.cpp" />
+		<Unit filename="../include/clipper.h" />
+		<Unit filename="../include/glew.h" />
+		<Unit filename="../include/BastelUtils.h" />
+		<Unit filename="../include/basteltype.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
