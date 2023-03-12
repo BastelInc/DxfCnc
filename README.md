@@ -2,4 +2,4 @@
 
 Programm zur steuerung vom CNC Fräse mittels DXF-Datei.
    
-   Verwendet FLTK Toolkit
+   Verwendet FLTK Toolkit und glew
