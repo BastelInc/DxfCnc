@@ -5,7 +5,7 @@
 
 
 #include <stdarg.h>
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 #include <FL/Fl.H>
 #include <FL/x.H>
 #include <FL/Fl_Window.H>

@@ -29,7 +29,7 @@
 #include "GlDisplay.h"
 #include "CncSetup.h"
 #include "FltkWindow.h"
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 #include "CVisual_Pad.h"
 #include "FileFolder.h"
 #include "Serialcom.h"
@@ -811,7 +811,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
   }
   argv[__argc] = 0;
   // Run the standard main entry point function...
+#ifdef DEVICECHANGE
   gDevicechangeCB = DevicechangeCB;
+#endif
 #else
 
 

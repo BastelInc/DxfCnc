@@ -5,7 +5,7 @@
 #include "FltkWindow.h"
 #include <FL/fl_draw.H>
 #include "Resource.h"
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 
 #include "CncSetup.h"
 //CWrkSheet::CWrkSheet(int X, int Y, int W, int H, const char *L):Fl_Double_Window(X,Y,W,H,L)

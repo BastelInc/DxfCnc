@@ -845,8 +845,9 @@ void InitFingerTouchService(void)
 
   typedef int (*WM_TouchWindowCB )(HWND,WPARAM, LPARAM);
   extern WM_TouchWindowCB  gTouchWindowCB;
+#ifdef  TOUCHWINDOW
   gTouchWindowCB = TouchWindow;
-
+#endif
 
 #endif
 #else

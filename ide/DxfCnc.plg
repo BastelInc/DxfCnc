@@ -1,0 +1,56 @@
+<html>
+<body>
+<pre>
+<h1>Erstellungsprotokoll</h1>
+<h3>
+--------------------Konfiguration: DxfCnc - Win32 Debug--------------------
+</h3>
+<h3>Befehlszeilen</h3>
+Erstellen der temporären Datei  "C:\users\rolf\Temp\RSPe752.tmp" mit Inhalten
+[
+/nologo /MTd /Gm /GX /ZI /Od /I "../include" /I "../" /I "../../fltk" /I "../../fltk/zlib" /I "../../fltk/png" /I "../../fltk/jpeg" /I "../../glew-2.1.0/include" /D "BLOCKSIMULATION" /D "SERIALCOM" /D "_DEBUG" /D "FLTK" /D "WIN32" /D "_WINDOWS" /D "_CRT_SECURE_NO_DEPRECATE" /D "_CRT_NONSTDC_NO_DEPRECATE" /D "WIN32_LEAN_AND_MEAN" /D "VC_EXTRA_LEAN" /D "WIN32_EXTRA_LEAN" /FR"Debug/" /Fp"Debug/DxfCnc.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\d\wrk\DxfCnc\src\FingerScroll.cpp"
+]
+Creating command line "cl.exe @C:\users\rolf\Temp\RSPe752.tmp" 
+Erstellen der temporären Datei  "C:\users\rolf\Temp\RSPe754.tmp" mit Inhalten
+[
+../../fltk/lib/vc6/fltk_gld.lib  ../../fltk/lib/vc6/fltkd.lib ../../glew-2.1.0/lib/glew32sd.lib opengl32.lib glu32.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DxfCnc.pdb" /debug /machine:I386 /out:"Debug/DxfCnc.exe" /pdbtype:sept /libpath:"..\..\vc6\lib" 
+.\Debug\BastelUtils.obj
+.\Debug\BlockModel.obj
+.\Debug\clipperVC6.obj
+.\Debug\CncSetup.obj
+.\Debug\DxfCnc.obj
+.\Debug\Edit.obj
+.\Debug\Execute.obj
+.\Debug\FileFolder.obj
+.\Debug\FingerScroll.obj
+.\Debug\FltkDialogBox.obj
+.\Debug\FltkWindow.obj
+.\Debug\GCodeObject.obj
+.\Debug\GlDisplay.obj
+.\Debug\Layers.obj
+.\Debug\LonMessage.obj
+.\Debug\MatrixTransform.obj
+.\Debug\Object.obj
+.\Debug\ObjectDraw.obj
+.\Debug\PolygonObject.obj
+.\Debug\ProgressStatus.obj
+.\Debug\Resource.obj
+.\Debug\Serialcom.obj
+.\Debug\Settings.obj
+.\Debug\Simplex.obj
+.\Debug\TreeView.obj
+]
+Erstellen der Befehlzeile "link.exe @C:\users\rolf\Temp\RSPe754.tmp"
+<h3>Ausgabefenster</h3>
+Kompilierung läuft...
+FingerScroll.cpp
+Linker-Vorgang läuft...
+
+
+
+<h3>Ergebnisse</h3>
+DxfCnc.exe - 0 Fehler, 0 Warnung(en)
+</pre>
+</body>
+</html>

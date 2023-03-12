@@ -21,7 +21,7 @@
 #include <FL/Fl_Native_File_Chooser.H>
 #endif
 
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 #include "CncSetup.h"
 #include "BlockModel.h"
 #include "Settings.h"

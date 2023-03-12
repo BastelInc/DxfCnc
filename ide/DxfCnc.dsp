@@ -70,7 +70,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /MTd /Gm /GX /ZI /Od /I "include" /I "NeuronComm" /I "." /I "../fltk" /I "../fltk/zlib" /I "../fltk/png" /I "../fltk/jpeg" /I "../glew-2.1.0/include" /D "BLOCKSIMULATION" /D "SERIALCOM" /D "_DEBUG" /D "FLTK" /D "WIN32" /D "_WINDOWS" /D "_CRT_SECURE_NO_DEPRECATE" /D "_CRT_NONSTDC_NO_DEPRECATE" /D "WIN32_LEAN_AND_MEAN" /D "VC_EXTRA_LEAN" /D "WIN32_EXTRA_LEAN" /FR /YX /FD /c
+# ADD CPP /nologo /MTd /Gm /GX /ZI /Od /I "../include" /I "../" /I "../../fltk" /I "../../fltk/zlib" /I "../../fltk/png" /I "../../fltk/jpeg" /I "../../glew-2.1.0/include" /D "BLOCKSIMULATION" /D "SERIALCOM" /D "_DEBUG" /D "FLTK" /D "WIN32" /D "_WINDOWS" /D "_CRT_SECURE_NO_DEPRECATE" /D "_CRT_NONSTDC_NO_DEPRECATE" /D "WIN32_LEAN_AND_MEAN" /D "VC_EXTRA_LEAN" /D "WIN32_EXTRA_LEAN" /FR /YX /FD /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
@@ -80,7 +80,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 opengl32.lib glu32.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept /libpath:"..\..\vc6\lib"
+# ADD LINK32 ../../fltk/lib/vc6/fltk_gld.lib  ../../fltk/lib/vc6/fltkd.lib ../../glew-2.1.0/lib/glew32sd.lib opengl32.lib glu32.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept /libpath:"..\..\vc6\lib"
 # SUBTRACT LINK32 /pdb:none /incremental:no
 
 !ENDIF 
@@ -94,107 +94,103 @@ LINK32=link.exe
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\BastelUtils.cpp
+SOURCE=..\src\BastelUtils.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\BlockModel.cpp
+SOURCE=..\src\BlockModel.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\clipperVC6.cpp
+SOURCE=..\src\clipperVC6.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\CncSetup.cpp
+SOURCE=..\src\CncSetup.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\DxfCnc.cpp
+SOURCE=..\src\DxfCnc.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Edit.cpp
+SOURCE=..\src\Edit.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Execute.cpp
+SOURCE=..\src\Execute.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\FileFolder.cpp
+SOURCE=..\src\FileFolder.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\FingerScroll.cpp
+SOURCE=..\src\FingerScroll.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\FltkDialogBox.cpp
+SOURCE=..\src\FltkDialogBox.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\FltkWindow.cpp
+SOURCE=..\src\FltkWindow.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\GCodeObject.cpp
+SOURCE=..\src\GCodeObject.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\GlDisplay.cpp
+SOURCE=..\src\GlDisplay.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\GlDisplay.h
+SOURCE=..\src\Layers.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Layers.cpp
+SOURCE=..\src\LonMessage.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\LonMessage.cpp
+SOURCE=..\src\MatrixTransform.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\MatrixTransform.cpp
+SOURCE=..\src\Object.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Object.cpp
+SOURCE=..\src\ObjectDraw.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\ObjectDraw.cpp
+SOURCE=..\src\PolygonObject.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\PolygonObject.cpp
+SOURCE=..\src\ProgressStatus.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\ProgressStatus.cpp
+SOURCE=..\src\Resource.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Resource.cpp
+SOURCE=..\src\Serialcom.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Serialcom.cpp
+SOURCE=..\src\Settings.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Settings.cpp
+SOURCE=..\src\Simplex.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Simplex.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\TreeView.cpp
+SOURCE=..\src\TreeView.cpp
 # End Source File
 # End Group
 # Begin Group "header"
@@ -202,103 +198,139 @@ SOURCE=.\TreeView.cpp
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\include\basteltype.h
+SOURCE=..\include\basteltype.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\include\BastelUtils.h
+SOURCE=..\include\BastelUtils.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\BlockModel.h
+SOURCE=..\include\BlockModel.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\clipper.h
+SOURCE=..\include\BlockModelTiefen_und_Vertext.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\CncSetup.h
+SOURCE=..\include\BlockModelVersuchAbbruch.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DXF3DDisplay.h
+SOURCE=..\include\clipper.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DXF_CncSetup.h
+SOURCE=..\include\CncSetup.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DXF_Object.h
+SOURCE=..\include\CommSnapMaker.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DXF_Tree.h
+SOURCE=..\include\CVisual_Pad.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\DxfCnc.h
+SOURCE=..\include\DXF3DDisplayUtils.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\FileFolder.h
+SOURCE=..\include\DxfCnc.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\FingerScroll.h
+SOURCE=..\include\FileFolder.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\FltkDialogBox.h
+SOURCE=..\include\FingerScroll.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\FltkWindow.h
+SOURCE=..\include\FltkDialogBox.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\GCodeObject.h
+SOURCE=..\include\FltkWindow.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Layers.h
+SOURCE=..\include\GCodeDown.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\LonMessage.h
+SOURCE=..\include\GCodeObject.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\MatrixTransform.h
+SOURCE=..\include\GlDialogBox.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\NNetmgmt.h
+SOURCE=..\include\GlDisplay.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Object.h
+SOURCE=..\include\glew.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\ProgressStatus.h
+SOURCE=..\include\gpc.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Resource.h
+SOURCE=..\include\Layers.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Serialcom.h
+SOURCE=..\include\LonMessage.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Settings.h
+SOURCE=..\include\MatrixTransform.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\TreeView.h
+SOURCE=..\include\NNetmgmt.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\Object.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\ProgressStatus.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\Resource.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\Serialcom.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\Settings.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\TouchLib.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\trackball.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\Tree.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\TreeView.h
 # End Source File
 # End Group
 # End Target

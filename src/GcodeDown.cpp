@@ -8,7 +8,7 @@
 #include "Object.h"
 #include "Resource.h"
 #include "Serialcom.h"
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 #include <FL/Fl.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Button.H>

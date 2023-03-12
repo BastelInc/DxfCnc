@@ -8,7 +8,7 @@
 #include <FL/Fl_Tabs.H>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Browser.H>
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 
 
 

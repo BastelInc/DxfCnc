@@ -10,7 +10,7 @@
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Browser.H>
 #include "FltkWindow.h"
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 
 
 typedef struct tButtonText

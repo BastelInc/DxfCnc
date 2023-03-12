@@ -1,6 +1,6 @@
 #ifndef CLONMESSAGE_H
 #define CLONMESSAGE_H
-#include "include/BastelUtils.h"
+#include "BastelUtils.h"
 #include "NNetmgmt.h"
 
 #pragma pack(push, 1)
