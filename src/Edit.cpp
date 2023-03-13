@@ -17,7 +17,7 @@
 //
 //     http://www.fltk.org/str.php
 //
-
+//  Modifiziert fuer DXF und Ggcode Syntax
 //
 // Include necessary headers...
 //

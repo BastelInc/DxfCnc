@@ -4356,17 +4356,6 @@ int CToolBox ::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
             prefs->set("LastFile",gFileExplorer->value());
 #else
       ShowTab(IDM_FILEOPEN);
-
-//      if(1) {
-//        if(gObjectManager && gObjectManager->m_FilePfadName[0] != '\0') {
-//          SelectTreeItem(gFileExplorer, gObjectManager->m_FilePfadName);
-//        } else {
-//          // gBastelUtils.GetProfileString("Profiler","TableNameX","",str,sizeof(str));
-//          // ShowFileExplorer(str,".dxf");
-//          SelectTreeItem(gFileExplorer, str);
-//        }
-//        Fl::focus(gFileExplorer);
-//      }
 #endif
       //#endif6
     }
