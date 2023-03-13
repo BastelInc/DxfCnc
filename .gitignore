@@ -20,6 +20,14 @@
 *.mod
 *.smod
 
+# Codeblocks und MSDEV6
+*.depend
+*.idb
+*.sbr
+*.ilk
+*.pdb
+*.layout
+
 # Compiled Static libraries
 *.lai
 *.la
