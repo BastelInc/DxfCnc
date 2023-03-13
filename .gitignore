@@ -27,6 +27,9 @@
 *.ilk
 *.pdb
 *.layout
+*.ncb
+*.opt
+*.plg
 
 # Compiled Static libraries
 *.lai
