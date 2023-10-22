@@ -317,7 +317,7 @@ static void * gMouse_thread(void *dummy)
           ||((evbit >> (EV_ABS)) & 1))
 #else
       if (((evbit >> (EV_REL)) & 1)
-          ||1
+//          ||1
           ||((evbit >> (EV_ABS)) & 1))
 #endif
       {

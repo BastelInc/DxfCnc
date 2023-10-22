@@ -42,7 +42,7 @@ public:
   virtual ~ReseorceInit ();
   static Fl_RGB_Image ic_AppIcon_xpm ;
   static Fl_Pixmap  TreeViewPics;
-  Fl_Image * ButtonImage_List[34];
+  Fl_Image * ButtonImage_List[35];
 
 protected:
 

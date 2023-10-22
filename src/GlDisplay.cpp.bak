@@ -1312,7 +1312,7 @@ int DXF3DDisplay::drawObjects(int Mode,int XMouse, int YMouse)
   XPos  = gCNCPos[Xp];
   YPos  = gCNCPos[Yp];
 
-  if (gPa.Drehen==1) {
+  /*  if (gPa.Drehen==1) {
     XPos  = gCNCPos[Yp]-gPa.Ref[Yp];
     YPos  = gPa.Ref[Xp]-gCNCPos[Xp];
   } else if (gPa.Drehen==10) {
@@ -1321,7 +1321,7 @@ int DXF3DDisplay::drawObjects(int Mode,int XMouse, int YMouse)
   } else {
     XPos  = gCNCPos[Xp]-gPa.Ref[Xp];
     YPos  = gCNCPos[Yp]-gPa.Ref[Yp];
-  }
+  }*/
 #endif
   glMatrixMode(GL_PROJECTION);
 

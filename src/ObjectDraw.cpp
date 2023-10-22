@@ -710,7 +710,7 @@ void CBohren::ExecuteDrawObject(int mode) {
       float tiefe  =  gPa.Tiefe[ETiefe&0xFF]*glFaktor;
       int   Stufe  =  3;
       glTranslatef(x,y,tiefe );
-      glutWireCylinder(radius,-tiefe,5+gPa.WerkzeugDuchmesser[ETiefe&&0xFF]/30,Stufe );
+      glutWireCylinder(radius,-tiefe,5+gPa.WerkzeugDuchmesser[ETiefe&0xFF]/30,Stufe );
       glTranslatef(-x,-y,-tiefe );
 #endif
     } else {
@@ -1394,7 +1394,8 @@ extest:
         if (Positoniert==0) {
           if ((mode & LaserGravur)==0) {
             int Z1 = gPa.Tiefe[0];
-            if (AbhebenwennNoetig(xx1,yy1)==0);;// return;
+            //if (
+            AbhebenwennNoetig(xx1,yy1);//==0);// return;
             PositionierWarteBis(xx1,yy1,Z1,(int)gPa.Tempo[Tempo_Verfahr]);
             Z1 = m_S.Z+gPa.Tiefe[(ETiefe < 7)?ETiefe:0];
             PositionierWarteBis(xx1,yy1,Z1,(int)gPa.Tempo[Tempo_Eintauch]);

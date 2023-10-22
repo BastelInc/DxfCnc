@@ -261,7 +261,7 @@ void GlTimer_CB(void *data)
     glDisplay_redraw = 0;
   }
   static float degTimer = 0;
-#if 1 //def MOUSSERVICE
+#ifdef MOUSSERVICE
   if (gObject_redraw) {
     pWrk3DSheet->redraw();
     gObject_redraw = 0;
@@ -351,23 +351,26 @@ void cbDisplayKey(Fl_Widget *item, void *idc)
     center[0] = 0;
     center[1] = 0;
     center[2] = 0;
-     UpdateMainWindow();
+    if (gWrk3DSheet)
+      gWrk3DSheet->redraw();
     break;
   case 'a':
     gShowLayerButtons(10000);
-    UpdateMainWindow();
+    if (gWrk3DSheet)
+      gWrk3DSheet->redraw();
     break;
   case 'n':
     gShowLayerButtons(0);
-    UpdateMainWindow();
+    if (gWrk3DSheet)
+      gWrk3DSheet->redraw();
     break;
   case 'D':
     gShowLayerButtons(-1);
-    UpdateMainWindow();
+    if (gWrk3DSheet)
+      gWrk3DSheet->redraw();
     break;
   case FL_F + 5:
     gObjectManager->Update3DreiTafelProjektion();
-    UpdateMainWindow();
     break;
   }
 }
@@ -816,7 +819,7 @@ int main(int argc, char **argv)
     // if (gObjectManager)
     // gObjectManager->FileOpen("/home/rolf/cad/Haus_3Tafel/Grundstueck.dxf",1);
     if (gObjectManager)
-      gObjectManager->FileOpen("/home/rolf/d/cad/Wohnmobil/Wohnmobil.dxf", 1);
+      gObjectManager->FileOpen("/home/rolf/Dokumente/schopf.dxf", 1);
 #endif
   } else {
     if (gObjectManager)
@@ -833,14 +836,13 @@ int main(int argc, char **argv)
     GetWindowText(hwnd, str, 200);
   }
 #endif
-  extern int bTouchScreen;
-  bTouchScreen=1;
-  InitFingerTouchService();
+
+  // InitFingerTouchService();
 
   sDXF3DDisplay.show();
 
   Fl::lock();
-  if (0) {
+  if (1) {
     int ret = Fl::run();
   } else {
     void *next_message;

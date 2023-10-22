@@ -174,6 +174,8 @@ public:
   CLaserTab(int X, int Y, int W, int H, const char *L);
   ~CLaserTab();
 public:
+  Fl_Choice    * m_LayerAuswahl;
+  Fl_Menu_Item * p_LayerListe;
   BOOL SetButtonImage(int nIDDlgItem, int iImage);
   virtual int WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
   virtual int InitWindow(Fl_Widget  * pParent,int ID,int left,int top,int width, int height,int Style);

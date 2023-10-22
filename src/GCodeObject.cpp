@@ -295,6 +295,12 @@ bool CObjectManager::GCodeEinlesen(void)
 
           // do something!
           if(code < 4 || !StartNewObject) {
+            if(has_command('S', instruction, size)) {
+              M3_4PWM = (search_string('S', instruction, size))/4.0;
+              LaserPower = M3_4PWM;
+              bLaserMode = 1;
+            }
+
             if(StartNewObject) {
               if(CNCInfoCnt <= AnzahlCNC2 - 1) {
                 CNCInfo[CNCInfoCnt] =
@@ -780,14 +786,16 @@ void CGCodeLineObject::AddVertex(ClipperLib::cInt x,
   if(y > 10000) {
     y = 0;
   }
-
-  if(m_Xmin > 0) {
-    x = -2400;
-    z = -2400;
-  } else {
-    x = 2400;
-    z = 2400;
+  if (gPa.Maschine[eDrehachse]) {
+    if(m_Xmin > 0) {
+      x = -2400;
+      z = -2400;
+    } else {
+      x = 2400;
+      z = 2400;
+    }
   }
+
   if(x < m_Xmin)
     m_Xmin = x;
   if(x > m_Xmax)
@@ -1174,10 +1182,12 @@ void CGCodeLineObject::ExecuteDrawObject(int mode)
         } else {
           PositionierWarteBis(X1, Y1, Z1, (int)(m_Path[index].mmSec100 * gPa.Maschine[eGcodeFeed] / 60));
         }
+#ifdef BLOCKSIMULATION
         ElementWorkCounter++;
         if(ElementWorkCounter > ElementWorkEnd) {
           runden = 0;
         }
+#endif
       }
       if(runden == 1) {
         if(index < (m_Path.size() - 1)) {

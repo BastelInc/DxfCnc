@@ -55,8 +55,13 @@ int CFltkDialogBox::InitWindow(Fl_Widget* pParent, int ID, int left, int top, in
   //DWORD dunit = GetDialogBaseUnits();
 //   extern int glabelsize;
 //  fl_font(FONTFACE,FONTSIZE);
+#ifdef MINISCREEN
+  int ySpace  = 15;
+  int xSpace  = 8;
+#else
   int ySpace  = fl_height();
   int xSpace  = fl_width("A");
+#endif
   int maxx=0;
   int maxy=0;
   if (ySpace  < 3 || ySpace  >40 || xSpace  < 3 || xSpace  > 30) {
@@ -619,14 +624,23 @@ class MyNumPad : public Fl_Window
     Fl_Button *b = (Fl_Button*)w;
     if ( strcmp(b->label(),"Del") == 0 ) {                  // handle Delete
       // Delete
+#if 1 //def WIN32
       if (in->mark() != in->position()) in->cut();
       else in->cut(-1);
+#else
+      if (in->mark() != in->insert_position()) in->cut();
+      else in->cut(-1);
+#endif
     } else if ( strcmp(b->label(), "Enter") == 0 ) {          // handle enter key
       // Do 'Enter' callback
       if ( enter_cb ) (*enter_cb)(in, enter_data);
     } else {                                                // handle all other keys
       // Appends label of button
+#if 1  //def WIN32
       in->replace(in->position(), in->mark(), b->label(), 1);
+#else
+      in->replace(in->insert_position(), in->mark(), b->label(), 1);
+#endif
     }
   }
   static void Button_CB(Fl_Widget *w, void *data)

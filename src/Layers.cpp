@@ -72,7 +72,7 @@ CLayers * GetLayer(int Layer)
 //-------------------------------------------------------------
 CLayers * GetLayerIndex(const void * ObjSource,const char * Layer)
 {
-#ifdef DREITABLE
+#if 0 //def DREITABLE
   int ix=0;
   if (gpLayers) {
     CLayers * pLayer=gpLayers;
@@ -427,6 +427,18 @@ void AdjustLayerSwitches()
 void gShowLayerButtons(int neu)
 {
   int i=0;
+  if (neu==-1) {
+    if (gpLayers) {
+      CLayers * pLayer=gpLayers;
+      while (pLayer) {
+        if (pLayer->m_Name) {
+          printf("%s\n",pLayer->m_Name);
+        }
+      pLayer = pLayer->m_NextLayer;
+      }
+    }
+  }
+
   if (gLayerFingerScroll) {
     char szWorklayer[256];
     if (1) {

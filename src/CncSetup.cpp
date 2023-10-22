@@ -59,24 +59,26 @@ const tDialogCtlItem rg_ToolBox[] = {
   { BUTTON "", IDC_Exit, MENUEW * 8, 1, MENUEW*2/3, MENUEH, WS_TABSTOP, NULL }, { 0 }
 };
 #else
-//#define MENUEW 49
-//#define MENUEH 25
-//const tDialogCtlItem rg_ToolBox[] = {
-//  { eDialogBox, "Tool", IDC_DialogBox, 4, 0, 70, 240, WS_BORDER | WS_TABSTOP }, // Dialog
-//  { BUTTON "File", IDM_FILEOPEN, MENUEW * 0, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "Nullp.k", IDM_NULLPUNKT, MENUEW * 1, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "DXF-C", IDM_DXFColor, MENUEW * 2, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "UpDt.", IDM_UPDATE, MENUEW * 3, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  //  { BUTTON "Modify\nDXF"     ,IDM_OPTIMIZEDXF   ,MENUEW*3,1,MENUEW,MENUEH,WS_TABSTOP,NULL},
-//  { BUTTON "Config", IDM_DXFSPEZIAL, MENUEW * 4, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "Layers", IDM_LAYER, MENUEW * 5, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "Display", IDM_DisplayAdj, MENUEW * 6, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  //  { BUTTON "Save\nParam"     ,IDM_FILESAVE      ,MENUEW*7,1,MENUEW,MENUEH,WS_TABSTOP,NULL},
-//  { BUTTON "Options", IDM_TOPDTOOL, MENUEW * 7, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "Conn", IDC_OnLine, MENUEW * 8, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "Stopp", IDM_STOPP, MENUEW * 9, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
-//  { BUTTON "", IDC_Exit, MENUEW * 10, 1, MENUEW, MENUEH, WS_TABSTOP, NULL }, { 0 }
-//};
+#ifdef MINISCREEN
+#define MENUEW 41
+#define MENUEH 25
+const tDialogCtlItem rg_ToolBox[] = {
+  { eDialogBox, "Tool", IDC_DialogBox, 4, 0, 70, 240, WS_BORDER | WS_TABSTOP }, // Dialog
+  { BUTTON "File", IDM_FILEOPEN, MENUEW * 0, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "Nullp", IDM_NULLPUNKT, MENUEW * 1, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "DXF-C", IDM_DXFColor, MENUEW * 2, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "UpD", IDM_UPDATE, MENUEW * 3, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  //  { BUTTON "Modify\nDXF"     ,IDM_OPTIMIZEDXF   ,MENUEW*3,1,MENUEW,MENUEH,WS_TABSTOP,NULL},
+  { BUTTON "Conf", IDM_DXFSPEZIAL, MENUEW * 4, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "Layers", IDM_LAYER, MENUEW * 5, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "Display", IDM_DisplayAdj, MENUEW * 6, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  //  { BUTTON "Save\nParam"     ,IDM_FILESAVE      ,MENUEW*7,1,MENUEW,MENUEH,WS_TABSTOP,NULL},
+  { BUTTON "Options", IDM_TOPDTOOL, MENUEW * 7, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "Conn", IDC_OnLine, MENUEW * 8, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "Stopp", IDM_STOPP, MENUEW * 9, 1, MENUEW, MENUEH, WS_TABSTOP, NULL },
+  { BUTTON "", IDC_Exit, MENUEW * 10, 1, MENUEW, MENUEH, WS_TABSTOP, NULL }, { 0 }
+};
+#else
 #define MENUEW 54
 #define MENUEH 21
 
@@ -103,7 +105,7 @@ const tDialogCtlItem rg_ToolBox  []= {
 
   { BUTTON "GCode",IDM_GCode,2+MENUEW*0,2+MENUEH*4,MENUEW,MENUEH,WS_TABSTOP| WS_GROUP,NULL},
   { BUTTON "Nullp.k",IDM_NULLPUNKT,2+MENUEW*1,2+MENUEH*4,MENUEW,MENUEH,WS_TABSTOP| WS_GROUP,NULL},
-  { BUTTON "Laser",IDM_LASER,2+MENUEW*2,2+MENUEH*4,MENUEW,MENUEH,WS_TABSTOP| WS_GROUP,NULL},
+  { BUTTON "DXF-Laser",IDM_LASER,2+MENUEW*2,2+MENUEH*4,MENUEW,MENUEH,WS_TABSTOP| WS_GROUP,NULL},
 
   { BUTTON "Adjust",IDM_Adjust,2+MENUEW*0,2+MENUEH*5,MENUEW,MENUEH,WS_GROUP |WS_TABSTOP,NULL},
   { BUTTON "DXF-C",IDM_DXFColor,2+MENUEW*1,2+MENUEH*5,MENUEW,MENUEH,WS_TABSTOP| WS_GROUP,NULL},
@@ -112,6 +114,7 @@ const tDialogCtlItem rg_ToolBox  []= {
 };
 
 
+#endif
 #endif
 
 const tDialogCtlItem rg_OptionsBox[] = {
@@ -137,7 +140,7 @@ const tDialogCtlItem rg_OptionsBox[] = {
 
   { BUTTON "GCode", IDM_GCode, 4, 122, 52, 28, WS_TABSTOP | WS_GROUP, NULL },
   { BUTTON "Nullp.k", IDM_NULLPUNKT, 58, 122, 52, 28, WS_TABSTOP | WS_GROUP, NULL },
-  { BUTTON "Laser", IDM_LASER, 112, 122, 52, 28, WS_TABSTOP | WS_GROUP, NULL },
+  { BUTTON "DXF-Laser", IDM_LASER, 112, 122, 52, 28, WS_TABSTOP | WS_GROUP, NULL },
 
   { BUTTON "Adjust", IDM_Adjust, 4, 152, 52, 28, WS_GROUP | WS_TABSTOP, NULL },
   { BUTTON "DXF-C", IDM_DXFColor, 58, 152, 52, 28, WS_TABSTOP | WS_GROUP, NULL },
@@ -154,10 +157,10 @@ const tDialogCtlItem rg_DxfLayer[] = { {
 DWORD Farbe[9] = { FL_GRAY, FL_RED, FL_YELLOW, FL_GREEN, FL_CYAN, FL_BLUE, FL_WHITE, FL_LIGHT1, FL_LIGHT3 };
 //-------------------------------------------------------------
 const tDialogCtlItem rg_DxfColorTab[] = { {
-    eDialogBox, "Tool", IDC_DialogBox - 1, 4, 2, 90, 192,
+    eDialogBox, "Tool", IDC_DialogBox - 1, 4, 2, 90, 220,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
   { AUTORADIOBUTTON "Bohren", IDM_BOHREN, 4, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "Fraesen", IDM_FRAESEN, 44, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "Spindle", IDM_SPINDLE, 84, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
@@ -191,6 +194,7 @@ const tDialogCtlItem rg_DxfColorTab[] = { {
   { eInputNum, "", id_EintauchTiefe1T, 14, 142, 144, 26, WS_TABSTOP | WS_CLIENTEDGE, NULL },
   { CTEXT "Stufe Tiefe mm", -1, 14, 172, 144, 11, ES_LEFT | ES_MULTILINE },
   { eInputNum, "", id_StufenTiefe1T, 14, 182, 144, 26, WS_TABSTOP | WS_CLIENTEDGE, NULL },
+
 //  { BUTTON "TempoCalculator", IDM_Calculator ,45,182,80,22,WS_TABSTOP,NULL},
 
 #else
@@ -217,7 +221,7 @@ const tDialogCtlItem rg_CalculatorTab[] = { {
     eDialogBox, "Tool", IDC_DialogBox - 1, 4, 2, 90, 192,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
   { BUTTON "Apply", IDM_ApplyValues, 44, 3, 80, 24, WS_TABSTOP, NULL },
   { BUTTON "Back", IDM_DXFColor, 124, 3, 40, 24, WS_TABSTOP, NULL },
 
@@ -239,7 +243,7 @@ const tDialogCtlItem rg_DXFtoCNCTab[] = { {
     eDialogBox, "Tool", IDC_DialogBox - 1, 4, 2, 90, 192,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
   { AUTORADIOBUTTON "Bohren", IDM_BOHREN, 4, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "Fraesen", IDM_FRAESEN, 44, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "Spindle", IDM_SPINDLE, 84, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
@@ -329,7 +333,7 @@ const tDialogCtlItem rg_ToolAdjustTab[] = { {
     eDialogBox, "Tool", IDC_DialogBox - 2, 4, 0, 80, 192,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
   { BUTTON "GOTO\nORIGIN", IDC_GehZuNULL, 4, 3, 35, 24, WS_TABSTOP, NULL },
   { BUTTON "SET X,Y\nORIGIN", id_XYNull, 39, 3, 35, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { BUTTON "SET Z\nORIGIN", id_ZNull, 74, 3, 35, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
@@ -380,7 +384,7 @@ const tDialogCtlItem rg_SettingsTab[] = { {
     eDialogBox, "Tool", IDC_DialogBox - 3, 4, 2, 90, 192,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
   { AUTORADIOBUTTON "RS232", IDC_Isel, 5, 3, 44, 24, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP, NULL },
   {
     AUTORADIOBUTTON "Sauger", IDM_Sauger, 55, 3, 44, 24,
@@ -453,9 +457,10 @@ const tDialogCtlItem rg_LaserTab[] = { {
     eDialogBox, "Tool", IDC_DialogBox - 3, 4, 2, 90, 192,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
 
   { AUTORADIOBUTTON "START", IDM_LASERENGRAVE, 5, 3, 40, 24, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP, NULL },
+  { AUTORADIOBUTTON "Spindle", IDM_SPINDLE, 64, 3, 40, 24, BS_AUTORADIOBUTTON |  BS_AUTOCHECKBOX |WS_TABSTOP, NULL },
   { BUTTON "STOPP", IDM_STOPP, 124, 3, 40, 24, WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "", IDM_Tiefe1, 6, 30, 26, 22, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "", IDM_Tiefe2, 32, 30, 26, 22, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
@@ -464,23 +469,25 @@ const tDialogCtlItem rg_LaserTab[] = { {
   { AUTORADIOBUTTON "", IDM_Tiefe5, 110, 30, 26, 22, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "", IDM_Tiefe6, 136, 30, 26, 22, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
 
-  { CTEXT "LASER POWER", -1, 10, 54, 54, 8, ES_RIGHT },
+  { CTEXT "", IDM_LAYER, 58, 54, 100, 18, ES_LEFT | ES_MULTILINE },
+
+  { CTEXT "LASER POWER", -1, 10, 77, 54, 8, ES_RIGHT },
   {
-    AUTORADIOBUTTON "Focus  ", IDC_FocusPowerOnF, 7, 69, 29, 18, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP,
+    AUTORADIOBUTTON "Focus  ", IDC_FocusPowerOnF, 7, 91, 29, 18, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP,
     NULL
   },
   {
-    AUTORADIOBUTTON "Work", IDC_LaserPowerOnF, 42, 69, 29, 18, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP,
+    AUTORADIOBUTTON "Work", IDC_LaserPowerOnF, 42, 91, 29, 18, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP,
     NULL
   },
-  { AUTORADIOBUTTON "OFF", IDC_PowerOff, 77, 69, 29, 18, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP, NULL },
-  { eSliderCtl, "Focus", IDC_FocusPower, 10, 90, 20, 82, WS_CLIENTEDGE | WS_VSCROLL | WS_TABSTOP },
-  { eSliderCtl, "Work", IDC_LaserPower, 45, 90, 20, 82, WS_CLIENTEDGE | WS_VSCROLL | WS_TABSTOP },
-  { CTEXT "SPEED", -1, 120, 54, 29, 8, ES_RIGHT },
-  { eSliderCtl, "Speed", IDC_LaserSpeed, 123, 90, 20, 82, WS_CLIENTEDGE | WS_VSCROLL | WS_TABSTOP },
-  { EDITTEXT "", IDC_FocusPowerT, 7, 177, 29, 21, WS_TABSTOP | WS_CLIENTEDGE, NULL },
-  { EDITTEXT "", IDC_LaserPowerT, 42, 177, 29, 21, WS_TABSTOP | WS_CLIENTEDGE, NULL },
-  { EDITTEXT "", IDC_LaserSpeedT, 120, 177, 29, 21, WS_TABSTOP | WS_CLIENTEDGE, NULL }, { 0 }
+  { AUTORADIOBUTTON "OFF", IDC_PowerOff, 77, 91, 29, 18, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP, NULL },
+  { eSliderCtl, "Focus", IDC_FocusPower, 10, 110, 20, 80, WS_CLIENTEDGE | WS_VSCROLL | WS_TABSTOP },
+  { eSliderCtl, "Work", IDC_LaserPower, 45, 110, 20, 80, WS_CLIENTEDGE | WS_VSCROLL | WS_TABSTOP },
+  { CTEXT "SPEED", -1, 120, 77, 29, 8, ES_RIGHT },
+  { eSliderCtl, "Speed", IDC_LaserSpeed, 123, 110, 20, 80, WS_CLIENTEDGE | WS_VSCROLL | WS_TABSTOP },
+  { EDITTEXT "", IDC_FocusPowerT, 7, 195, 29, 21, WS_TABSTOP | WS_CLIENTEDGE, NULL },
+  { EDITTEXT "", IDC_LaserPowerT, 42, 195, 29, 21, WS_TABSTOP | WS_CLIENTEDGE, NULL },
+  { EDITTEXT "", IDC_LaserSpeedT, 120, 195, 29, 21, WS_TABSTOP | WS_CLIENTEDGE, NULL }, { 0 }
 };
 
 //-------------------------------------------------------------
@@ -488,7 +495,7 @@ const tDialogCtlItem rg_GcodeTab[] = { {
     eDialogBox, "Tool", IDC_DialogBox - 3, 4, 2, 90, 192,
     WS_BORDER | WS_TABSTOP
   }, // Dialog
-  { CONTROL "", -1, 3, 0, 164, 209, WS_DLGFRAME, NULL },
+  { CONTROL "", -1, 3, 0, 164, 219, WS_DLGFRAME, NULL },
   { AUTORADIOBUTTON "RUN", IDM_RUNGCODE, 4, 3, 40, 24, BS_AUTORADIOBUTTON | WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "Spindle", IDM_SPINDLE, 44, 3, 40, 24, BS_AUTORADIOBUTTON |  BS_AUTOCHECKBOX |WS_TABSTOP, NULL },
   { AUTORADIOBUTTON "Laser", IDM_LASERENGRAVE,84, 3, 40, 24, BS_AUTORADIOBUTTON | BS_AUTOCHECKBOX | WS_TABSTOP, NULL },
@@ -1044,6 +1051,7 @@ void Show_ExecuteState()
   gDxfColorTab->CheckDlgButton(IDM_BOHREN, gCNCAktiv && (gExecuteMode & Punkt) != 0);
   gGcodeTab->CheckDlgButton(IDM_RUNGCODE, gCNCAktiv && (gExecuteMode & GCodeLinine) != 0);
   gLaserTab->CheckDlgButton(IDM_LASER, gCNCAktiv && (gExecuteMode & LaserGravur) != 0);
+  gLaserTab->CheckDlgButton(IDM_SPINDLE, gSpindleOn);
   gNullpunktTab->CheckDlgButton(IDC_GehZuNULL, gCNCAktiv && (gExecuteMode & NullPunkt) != 0);
 
   /*  gDxfColorTab->CheckDlgButton(  IDM_STOPP,         gStopp);
@@ -1651,6 +1659,14 @@ int CDxfColorTab::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
     static bool recursion = 0;
     switch(wParam) {
     case IDM_FRAESEN: {
+#ifdef BLOCKSIMULATION
+    if (gBlockSimulation) {
+      gBlockSimulation->m_BlockHoeheS=0;
+      gBlockSimulation->m_BlockHoeheE=0;
+      gBlockSimulation->m_MeisselDurchmesser=gPa.WerkzeugDuchmesser[AktTiefe]/(float)gPa.Aufloesung;
+      gBlockSimulation->m_MeisselForm = 0;
+    }
+#endif
       StartExecuteThread(Linie | Buchstaben | Kreisbogen);
     }
     break;
@@ -1667,6 +1683,14 @@ int CDxfColorTab::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
       StopCNC();
       break;
     case IDM_BOHREN: {
+#ifdef BLOCKSIMULATION
+    if (gBlockSimulation) {
+      gBlockSimulation->m_BlockHoeheS=0;
+      gBlockSimulation->m_BlockHoeheE=0;
+      gBlockSimulation->m_MeisselDurchmesser=gPa.WerkzeugDuchmesser[AktTiefe]/(float)gPa.Aufloesung;
+      gBlockSimulation->m_MeisselForm = 1;
+    }
+#endif
       StartExecuteThread(gExecuteMode = Punkt);
     }
     break;
@@ -1840,12 +1864,21 @@ int CDxfColorTab::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
     case IDM_Tiefe5:
     case IDM_Tiefe6:
       AktTiefe = wParam - IDM_Tiefe1 + 1;
+#ifdef BLOCKSIMULATION
+    if (gBlockSimulation) {
+      gBlockSimulation->m_BlockHoeheS=0;
+      gBlockSimulation->m_BlockHoeheE=0;
+      gBlockSimulation->m_MeisselDurchmesser=gPa.WerkzeugDuchmesser[AktTiefe]/(float)gPa.Aufloesung;
+    }
+#endif
       Show();
       if(gWrk3DSheet->visible()) {
         // gWrk3DSheet->CNCFreigeben();
         // gWrk3DSheet->invalidate();
         gWrk3DSheet->redraw();
       }
+
+
       Fl::lock();
       Fl::check();
       Fl::unlock();
@@ -3104,6 +3137,8 @@ CLaserTab ::CLaserTab(int X, int Y, int W, int H, const char* L)
   if(m_pDialogCtlItem) {
     memcpy(m_pDialogCtlItem, &rg_LaserTab, m_NumDialogCtlItem * sizeof(tDialogCtlItem));
   }
+  m_LayerAuswahl = NULL;
+  p_LayerListe = NULL;
 }
 
 //-------------------------------------------------------------
@@ -3149,6 +3184,16 @@ int CLaserTab::InitWindow(Fl_Widget* pParent, int ID, int left, int top, int wid
   if(pCtlItem && pCtlItem->pWndObject) {
     ((Fl_Value_Slider*)pCtlItem->pWndObject)->type(FL_VERT_NICE_SLIDER);
   }
+  pCtlItem = pGetDlgItem(IDM_LAYER);
+  if(pCtlItem && pCtlItem->pWndObject) {
+    int r = ((Fl_Counter*)pCtlItem->pWndObject)->x();
+    int t = ((Fl_Counter*)pCtlItem->pWndObject)->y();
+    int h = ((Fl_Counter*)pCtlItem->pWndObject)->h();
+    int w = ((Fl_Counter*)pCtlItem->pWndObject)->w();
+    m_LayerAuswahl = new Fl_Choice(r, t, w, h, "WorkLayer");
+    ;
+    // choice->menu(FraeserChoices);
+  }
   return maxxy;
 }
 
@@ -3178,6 +3223,56 @@ void CLaserTab::Show(void)
     ((Fl_Value_Slider*)pCtlItem->pWndObject)->value(gPa.Maschine[eLaserSpeed]);
   }
 
+  if(p_LayerListe)
+    free(p_LayerListe);
+
+  int gLayerAnz = 0;
+  CLayers* pLayer = gpLayers;
+  while(pLayer) {
+    gLayerAnz++;
+    pLayer = pLayer->m_NextLayer;
+  }
+
+  p_LayerListe = (Fl_Menu_Item*)malloc(sizeof(Fl_Menu_Item) * (gLayerAnz + 1));
+  if(p_LayerListe) {
+    memset(p_LayerListe, 0, sizeof(Fl_Menu_Item) * (gLayerAnz + 1));
+    int aktiveLayers = 0;
+    int selindex = -1;
+
+    CLayers* pLayer = gpLayers;
+    for(int i = 0; i < gLayerAnz; i++) {
+      if(pLayer) {
+        p_LayerListe[aktiveLayers].text = pLayer->m_Name;
+        p_LayerListe[aktiveLayers].shortcut_ = i;
+        // if (WorkLayer==pLayer) selindex = aktiveLayers;
+        if(strcmp(szWorkLayer, pLayer->m_Name) == 0) {
+          selindex = aktiveLayers;
+          WorkLayer = pLayer;
+        }
+        p_LayerListe[aktiveLayers].callback_ = CFltkDialogBox::cbUniversal;
+        p_LayerListe[aktiveLayers].user_data_ = (void*)IDM_LAYER;
+        aktiveLayers++;
+        pLayer = pLayer->m_NextLayer;
+      }
+    }
+
+    /*      for (int i=0;i< gLayerAnz;i++) {
+            int OLayer = 1 << i;
+            if ((AktLayer&OLayer)==OLayer) {
+              p_LayerListe[aktiveLayers].text = gszLayer[i];
+              p_LayerListe[aktiveLayers].shortcut_ = i;
+              if (WorkLayer==i) selindex = aktiveLayers;
+              p_LayerListe[aktiveLayers].callback_ = CFltkDialogBox::cbUniversal;
+              p_LayerListe[aktiveLayers].user_data_=(void*)IDM_LAYER;
+              aktiveLayers++;
+            }
+          }*/
+    m_LayerAuswahl->menu(p_LayerListe);
+    m_LayerAuswahl->value(selindex);
+  }
+
+
+
   SetDlgItemInt(IDC_FocusPowerT, gPa.Maschine[eFocusPower], 0);
   SetDlgItemInt(IDC_LaserPowerT, gPa.Maschine[eLaserPower], 0);
   SetDlgItemInt(IDC_LaserSpeedT, gPa.Maschine[eLaserSpeed], 0);
@@ -3195,10 +3290,29 @@ int CLaserTab::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
     float f;
     switch(wParam) {
     case IDM_LASERENGRAVE:
+      gLaserEnable=1;
+    if (gBlockSimulation) {
+      gBlockSimulation->m_BlockHoeheS=0;
+      gBlockSimulation->m_BlockHoeheE=0;
+      gBlockSimulation->m_MeisselDurchmesser=0.75;
+      gBlockSimulation->m_MeisselForm = 0;
+    }
       LaserState = wParam;
       CheckRadioButton(IDC_LaserPowerOnF, IDM_LASERENGRAVE, LaserState);
-      StartExecuteThread(gExecuteMode = LaserGravur | Linie | Buchstaben | Kreisbogen);
+      StartExecuteThread(gExecuteMode = LaserGravur |GCodeLinine| Linie | Buchstaben | Kreisbogen);
       goto doit;
+
+    case IDM_SPINDLE:
+//      gLaserEnable=0;
+      if(!gSpindleOn) {
+        SendToCNC('E',1);
+      } else {
+        SendToCNC('E', 0);
+      }
+      Show_ExecuteState();
+      Show();
+      break;
+
     case IDM_STOPP:
       StopCNC();
       break;
@@ -3216,6 +3330,32 @@ doit : {
         CheckRadioButton(IDC_LaserPowerOnF, IDM_LASERENGRAVE, LaserState);
       }
       break;
+    case IDM_LAYER: {
+      int ix = ((Fl_Choice*)lParam)->value();
+      int i = p_LayerListe[ix].shortcut_;
+      CLayers* pLayer = gpLayers;
+      while(pLayer && i >= 0) {
+        if(i == 0)
+          break;
+        i--;
+        pLayer = pLayer->m_NextLayer;
+      }
+      if(i >= 0) {
+        WorkLayer = pLayer;
+        strncpy(szWorkLayer, WorkLayer->m_Name, sizeof(szWorkLayer));
+      } else {
+        WorkLayer = NULL;
+        szWorkLayer[0] = '\0';
+      }
+
+      if(gWrk3DSheet->visible()) {
+        // gWrk3DSheet->CNCFreigeben();
+        // gWrk3DSheet->invalidate();
+        gWrk3DSheet->redraw();
+      }
+    }
+    break;
+
     case IDM_Tiefe1:
     case IDM_Tiefe2:
     case IDM_Tiefe3:
@@ -3485,8 +3625,8 @@ int CGcodeTab::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 
     case IDM_LASERENGRAVE:
       gLaserEnable = IsDlgButtonChecked(IDM_LASERENGRAVE);
+      SendToCNC('E', 1);
       Show_ExecuteState();
-      SendToCNC('E', 0);
       break;
     case IDM_SPINDLE:
       gLaserEnable=0;
@@ -3903,7 +4043,7 @@ int CPerspektive::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
     char s[32];
 
     tDialogCtlItem* pCtlItem = pGetDlgItem(wParam);
-    if(pCtlItem && pCtlItem->pWndObject)
+    if(pCtlItem && pCtlItem->pWndObject) {
       if(pCtlItem->type == eSliderCtl) {
         switch(wParam) {
         case IDC_CenterX:
@@ -4074,6 +4214,7 @@ int CPerspektive::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
           Show();
         }
       }
+    }
     recursion = 0;
   }
   return 0;
@@ -4296,7 +4437,7 @@ int CToolBox ::InitWindow(Fl_Widget* pParent, int ID, int left, int top, int wid
     SetButtonImage(IDM_Tiefe4,22);
     SetButtonImage(IDM_Tiefe5,23);
     SetButtonImage(IDM_Tiefe6,24);*/
-  SetButtonImage(IDC_OnLine, imOffline);
+  SetButtonImage(IDC_OnLine,imOffline);
 
   if(!Style) {
     SetButtonImage(IDC_ModeFullscreen, imFullSize);
@@ -4304,7 +4445,11 @@ int CToolBox ::InitWindow(Fl_Widget* pParent, int ID, int left, int top, int wid
     ShowDlgItem(IDC_ModeFullscreen, 0);
   }
   SetSelectionColor(IDC_DXFtoCNCTab,FL_DARK_GREEN);
+#ifdef BLOCKSIMULATION
   SetSelectionColor(IDM_GBlock,FL_DARK_MAGENTA);
+#else
+  EnableDlgItem(IDM_GBlock,0);
+#endif
   SetSelectionColor(IDM_GCode, FL_DARK_GREEN);
   SetSelectionColor(IDC_Isel, FL_DARK_MAGENTA);
   SetSelectionColor(IDC_GoCnc, FL_DARK_MAGENTA);
@@ -4321,6 +4466,7 @@ int CToolBox ::InitWindow(Fl_Widget* pParent, int ID, int left, int top, int wid
 //-------------------------------------------------------------
 void CToolBox ::Show(void)
 {
+  SetButtonImage(IDC_OnLine,gpSerialComm?imOnline:imOffline);
   show();
 }
 //-------------------------------------------------------------
@@ -4612,6 +4758,8 @@ int COptionsBox ::InitWindow(Fl_Widget* pParent, int ID, int left, int top, int 
 //-------------------------------------------------------------
 void COptionsBox ::Show(void)
 {
+  SetButtonImage(IDC_OnLine,gpSerialComm?imOnline:imOffline);
+
   show();
 }
 //-------------------------------------------------------------

@@ -352,7 +352,7 @@ bool SendToCNC(int Command, float V1, float V2, float V3, float V4, float V5)
       SollV1 += V1;
       CuX = V1 / 100.0;
       ;
-      sprintf((char*)ComBuff, "G91\nG1 X%.2f\n", CuX);
+      sprintf((char*)ComBuff, "G91\nG1 X%.2fF%d\n", CuX,6000);
       gCNCCode = 0;
     }
     break;
@@ -361,7 +361,7 @@ bool SendToCNC(int Command, float V1, float V2, float V3, float V4, float V5)
       SollV2 += V1;
       CuY = V1 / 100.0;
       ;
-      sprintf((char*)ComBuff, "G91\nG1 Y%.2f\n", CuY);
+      sprintf((char*)ComBuff, "G91\nG1 Y%.2fF%d\n", CuY,6000);
       gCNCCode = 0;
     }
     break;
@@ -370,7 +370,7 @@ bool SendToCNC(int Command, float V1, float V2, float V3, float V4, float V5)
       SollV3 += V1;
       CuZ = V1 / 100.0;
       ;
-      sprintf((char*)ComBuff, "G91\nG1 Z%.2f\n", CuZ);
+      sprintf((char*)ComBuff, "G91\nG1 Z%.2fF%d\n", CuZ,6000);
       gCNCCode = 0;
     }
     break;
@@ -421,7 +421,7 @@ bool SendToCNC(int Command, float V1, float V2, float V3, float V4, float V5)
       break;
     case 'E':
       if(V1)
-        sprintf((char*)ComBuff, "M3 S%d\n", (int)V1);
+        sprintf((char*)ComBuff, "M3 P%d S%d\n",(int)V1, (int)V1);
       else
         sprintf((char*)ComBuff, "M5\n");
       gSpindleOn = V1;
@@ -445,6 +445,7 @@ bool SendToCNC(int Command, float V1, float V2, float V3, float V4, float V5)
 
     case 'R':
       sprintf((char*)ComBuff, "G90\nG21\nG28 X Y Z\n");
+      //sprintf((char*)ComBuff, "$H\n");
       SollTempo = 1000;
       gCNCCode = 0;
       break;

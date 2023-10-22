@@ -350,7 +350,7 @@ public:
 
 #ifdef  USEVECTOR
 #define  AnzahlCNC2   5000
-typedef CObject * CObjectArray[AnzahlCNC2];
+//typedef CObject * CObjectArray[AnzahlCNC2];
 #else
 #define  AnzahlCNC2   50000
 #endif

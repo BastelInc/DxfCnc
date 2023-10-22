@@ -2,33 +2,32 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="DxfCnc" />
+		<Option title="Dxf3Table" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="Debug/dxfcnc" prefix_auto="1" extension_auto="1" />
+				<Option output="Debug/Dxf3Table" prefix_auto="1" extension_auto="1" />
 				<Option object_output="Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="MESA_GL_VERSION_OVERRIDE=3.3" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-m64" />
 					<Add option="-g" />
-					<Add option="`fltk-config --cxxflags`" />
-					<Add option="-fpermissive" />
-					<Add option="-UMINISCREEN" />
 					<Add option="-DNIX_NATIVE_FILECHOOSER" />
-					<Add option="-DBLOCKSIMULATION" />
+					<Add option="-DUSE_SHADER" />
 					<Add directory="../include" />
 				</Compiler>
 				<Linker>
+					<Add option="-m64" />
 					<Add library="z" />
 					<Add library="GLEW" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="Release/dxfcnc" prefix_auto="1" extension_auto="1" />
+				<Option output="Release/Dxf3Table" prefix_auto="1" extension_auto="1" />
 				<Option object_output="Release/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -42,7 +41,7 @@
 				</Linker>
 			</Target>
 			<Target title="Win32">
-				<Option output="Debug/dxfcnc" prefix_auto="1" extension_auto="1" />
+				<Option output="Debug/Dxf3Table" prefix_auto="1" extension_auto="1" />
 				<Option object_output="Debug/" />
 				<Option type="1" />
 				<Option compiler="msvc8" />
@@ -60,6 +59,8 @@
 			<Add option="-DFRAMEBUFFER" />
 			<Add option="-DFLTK" />
 			<Add option="-DSERIALCOM" />
+			<Add option="-DDREITABLE" />
+			<Add option="-DFINGERSCROLL" />
 			<Add directory="/home/rolf/wrk/glew-2.1.0/include" />
 			<Add directory="NeuronComm" />
 			<Add directory="include" />
@@ -71,23 +72,12 @@
 			<Add directory="Comm" />
 		</Compiler>
 		<Linker>
-			<Add library="GLU" />
+			<Add option="`fltk-config --ldstaticflags`" />
 			<Add library="usb-1.0" />
 			<Add library="pthread" />
-			<Add library="libfltk_gl.a" />
-			<Add library="libfltk.a" />
+			<Add library="GLU" />
 			<Add library="GL" />
-			<Add library="Xrender" />
-			<Add library="Xcursor" />
-			<Add library="Xfixes" />
-			<Add library="Xext" />
-			<Add library="Xft" />
-			<Add library="fontconfig" />
-			<Add library="Xinerama" />
-			<Add library="dl" />
-			<Add library="m" />
-			<Add library="X11" />
-			<Add library="z" />
+			<Add library="libfltk_gl.a" />
 		</Linker>
 		<Unit filename="../include/BastelUtils.h" />
 		<Unit filename="../include/DXF3DDisplayUtils.h" />
@@ -109,29 +99,23 @@
 		<Unit filename="../include/clipper.h" />
 		<Unit filename="../include/glew.h" />
 		<Unit filename="../src/BastelUtils.cpp" />
-		<Unit filename="../src/BlockModel.cpp" />
-		<Unit filename="../src/CncSetup.cpp" />
-		<Unit filename="../src/CncSetup.h" />
-		<Unit filename="../src/DxfCnc.cpp" />
+		<Unit filename="../src/DXF3DDisplayUtils.cpp" />
+		<Unit filename="../src/DreiTafelProjektion.cpp" />
+		<Unit filename="../src/Dxf3Table.cpp" />
 		<Unit filename="../src/Edit.cpp" />
-		<Unit filename="../src/Execute.cpp" />
-		<Unit filename="../src/FileFolder.cpp" />
 		<Unit filename="../src/FingerScroll.cpp" />
-		<Unit filename="../src/FltkDialogBox.cpp" />
-		<Unit filename="../src/FltkWindow.cpp" />
 		<Unit filename="../src/GCodeObject.cpp" />
 		<Unit filename="../src/GlDisplay.cpp" />
+		<Unit filename="../src/GlShaderDisplay.cpp" />
 		<Unit filename="../src/Layers.cpp" />
-		<Unit filename="../src/LonMessage.cpp" />
 		<Unit filename="../src/MatrixTransform.cpp" />
 		<Unit filename="../src/Object.cpp" />
 		<Unit filename="../src/ObjectDraw.cpp" />
 		<Unit filename="../src/PolygonObject.cpp" />
-		<Unit filename="../src/ProgressStatus.cpp" />
 		<Unit filename="../src/Resource.cpp" />
-		<Unit filename="../src/Serialcom.cpp" />
 		<Unit filename="../src/Settings.cpp" />
 		<Unit filename="../src/Simplex.cpp" />
+		<Unit filename="../src/StlObject.cpp" />
 		<Unit filename="../src/TreeView.cpp" />
 		<Unit filename="../src/clipper.cpp" />
 		<Extensions />

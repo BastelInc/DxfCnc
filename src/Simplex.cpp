@@ -325,7 +325,7 @@ void DXFDisplay::TextSchreiben(int X1,int Y1,float Groesse,int Winkel,char * St)
         case 142:
         case 132: //'ä':
         ch = 127;
-        break;	//* Umlate nicht sortiert
+        break;	// * Umlate nicht sortiert
         case 148:
         case 246:
         case 153: //'ö':

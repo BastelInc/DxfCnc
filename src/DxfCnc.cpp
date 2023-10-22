@@ -121,6 +121,7 @@ void * IniPortProc()
   gpSerialComm = new SerialComm(str);
   if (gpSerialComm) {
     gToolBox->SetButtonImage(IDC_OnLine,imOnline);
+    gOptionsBox->SetButtonImage(IDC_OnLine,imOnline);
     gToolBox->SetDlgItemText(IDC_OnLine,"ON");
     gToolBox->ShowDlgItem(IDC_OnLine,1);
     SendToCNC('B',0,0,0);
@@ -679,7 +680,7 @@ void SetIniFile(LPCSTR FileName)
     strcat(CBastelUtils::s_IniPath,"/.");
 #else
     strcpy(CBastelUtils::s_IniPath,"");
-#endif  
+#endif
   }
   strcat(CBastelUtils::s_IniPath,"bastel");
   if (FileName==NULL)
@@ -839,12 +840,22 @@ int main(int argc, char **argv) {
 
   i=0;
   SetIniFile(gIselRs232Mode?"IselDxf.ini":"GoCnc.ini");
-  Fl::set_font(FL_FREE_FONT,"-*-medium-*-normal-*-12-*-*-*-*-*-*-*");
-//  Fl::set_font(FL_FREE_FONT,"-microsoft-comic sans ms-medium-*-normal-*-12-240-*-*-*-*-*-*");
-#define FONTFACE    FL_HELVETICA//  FL_COURIER
+#if 0
+  static const char *custom_font = "-*- Comic Sans MS-medium-*-normal-*-13-240-*-*-*-*-*-*";
+  static const char *custom_fontB= "-*- Comic Sans MS-bold-*-normal-*-13-240-*-*-*-*-*-*";
+  Fl::set_font(FL_HELVETICA_BOLD, custom_fontB);
+  Fl::set_font(FL_HELVETICA, custom_font);
 #undef  FONTSIZE
-#define FONTSIZE    12
-  fl_font(FL_FREE_FONT,FONTSIZE);
+#define FONTSIZE   0
+#else
+#ifdef MINISCREEN
+#define FONTSIZE   11
+#else
+#define FONTSIZE   13
+#endif
+#endif
+  fl_font(FL_HELVETICA,FONTSIZE);
+  fl_font(FL_HELVETICA_BOLD,FONTSIZE);
   R = new ReseorceInit ();
   if (1) {
     Fl::get_system_colors();
@@ -869,6 +880,10 @@ int main(int argc, char **argv) {
     //Fl::set_color(FL_SELECTION_COLOR,241, 176, 0);
   }
 
+//  // prefix (space, I, B, P)
+//  static const char *custom_font = " Comic Sans MS";
+//  static const char *custom_fontB= "BComic Sans MS";
+
   int num = Fl::screen_num(MainPosX+100,MainPosY+100);
 
   if (bfullscreen)  {
@@ -883,9 +898,17 @@ int main(int argc, char **argv) {
   extern void LonMessage(unsigned char * msg);
   gLonService ->m_Callback = LonMessage;
 #endif
-  //Mainheight = 480;
-  //Mainwidth = 848;
+  int border = 2;
+#ifdef MINISCREEN
+  int MenuHeight=48;
 
+  Mainheight = 480;
+  Mainwidth = 794;//848;
+  int ToolHeight =  Mainheight  - yStatus- MenuHeight;
+#else
+  int ToolHeight =  100;//Mainheight  - yStatus;
+  int MenuHeight=0;
+#endif
   int PerspektiveTool = 1;// Mainwidth < 850; // Raspi LCD
 //  if (Mainheight < 768) Mainheight = 768;
   MainWindow  = new Fl_Double_Window(Mainwidth, Mainheight, "DxfCnc");
@@ -900,18 +923,14 @@ int main(int argc, char **argv) {
       MainWindow ->fullscreen();
     }
 
-    int ToolHeight =  yTool;
-    int MenuHeight=48;
-    //int ToolHeight =  Mainheight  - yStatus- MenuHeight;
-    int border = 2;
-
-    /*
+#ifdef MINISCREEN
+    //int ToolHeight =  yTool;
         gToolBox = new CToolBox(0,0,Mainwidth,MenuHeight,0);
         if (gToolBox ) {
           int s =  (gToolBox ->InitWindow(MainWindow,0,0,0,Mainwidth,MenuHeight,0));
           gToolBox ->end();
         }
-    */
+#endif
 
 
 
@@ -924,13 +943,14 @@ int main(int argc, char **argv) {
 //      Fl_Scroll* ToolPart1= new Fl_Scroll(0,MenuHeight,xTool,Mainheight-yStatus-MenuHeight*2-3,0);
 //      ToolPart1->resizable(0);
 //      ToolPart1->type (0);
-    Fl_Pack* ToolPart= new Fl_Pack(0,0,xTool,10,0);
+    Fl_Pack* ToolPart= new Fl_Pack(0,MenuHeight,xTool,10,0);
 #endif
 
 
     ToolPart->end();
     ToolPart->spacing(0);
     int xTool2 = xTool;
+#ifndef MINISCREEN
     gToolBox = new CToolBox(border,border,xTool2-border,yTool-border,0);
     if (gToolBox ) {
       int s =  (gToolBox ->InitWindow(ToolPart,0,border,border,xTool-border,yTool-border,PerspektiveTool));
@@ -940,9 +960,10 @@ int main(int argc, char **argv) {
       gToolBox ->size(xTool-border,yTool-border);
       gToolBox ->end();
     }
+    MenuHeight = 0;
     ToolPart->size(xTool,10);
     ToolPart->add(gToolBox );
-    MenuHeight = 0;
+#endif
     int yTool3= 2+MenuHeight;
     gOptionsBox = new COptionsBox(border,yTool3,xTool2,ToolHeight,"1");
     if (gOptionsBox ) {
@@ -1116,17 +1137,24 @@ int main(int argc, char **argv) {
       StatusPart->end();
     }
 
-    //Fl_Group* WorkPart= new Fl_Group(xTool,MenuHeight,Mainwidth-xTool-xPerspektive,Mainheight-yStatus-MenuHeight,0);//Fl_Group(0,0,xTool,Mainheight-yStatus,0);
+#ifdef MINISCREEN
+    Fl_Group* WorkPart= new Fl_Group(xTool,MenuHeight,Mainwidth-xTool-xPerspektive,Mainheight-yStatus-MenuHeight,0);//Fl_Group(0,0,xTool,Mainheight-yStatus,0);
+#else
     Fl_Tile* WorkPart = new Fl_Tile(xTool,MenuHeight,Mainwidth-xTool-xPerspektive,Mainheight-yStatus-MenuHeight,0);//Fl_Group(0,0,xTool,Mainheight-yStatus);
+#endif
     if (WorkPart) {
       WorkPart->box(FL_DOWN_FRAME);
       yTab = 200;
       gObjectManager = new CObjectManager ();
       if (1) {
-        {
-          gEditemain = Editemain(xTool,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
+#ifdef EDITEMAIN
+        gEditemain = Editemain(xTool,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
+#endif
+        if (gEditemain) {
           //gEditemain = Editemain(Mainwidth-xPerspektive-yTab,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
           gEditemain->show();
+        } else {
+          yTab =0;
         }
         {
           WorkPart->begin();
@@ -1137,14 +1165,14 @@ int main(int argc, char **argv) {
           gWrk3DSheet ->show();
         }
       } else {
-          gWrk3DSheet = new DXF3DDisplay(xTool,MenuHeight,Mainwidth-xTool-xPerspektive-yTab,Mainheight-yStatus-MenuHeight,NULL);
-          gWrk3DSheet->when(FL_WHEN_RELEASE);
-          gWrk3DSheet ->end();
+        gWrk3DSheet = new DXF3DDisplay(xTool,MenuHeight,Mainwidth-xTool-xPerspektive-yTab,Mainheight-yStatus-MenuHeight,NULL);
+        gWrk3DSheet->when(FL_WHEN_RELEASE);
+        gWrk3DSheet ->end();
 
-          gWrk3DSheet ->show();
-          gEditemain = Editemain(Mainwidth-xPerspektive-yTab,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
-          //gEditemain = Editemain(Mainwidth-xPerspektive-yTab,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
-          gEditemain->show();
+        gWrk3DSheet ->show();
+        gEditemain = Editemain(Mainwidth-xPerspektive-yTab,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
+        //gEditemain = Editemain(Mainwidth-xPerspektive-yTab,MenuHeight, yTab,Mainheight-yStatus-MenuHeight,NULL);
+        gEditemain->show();
       }
       WorkPart->end();
     }
@@ -1181,7 +1209,7 @@ int main(int argc, char **argv) {
     gStatus1->label(str);
     if (gObjectManager) gObjectManager->FileOpen(str,1);
   }
-  ShowTab(IDM_GBlock);// NULLPUNKT);
+  ShowTab(IDM_NULLPUNKT);
 
   //MainWindow ->redraw_overlay();
 
@@ -1214,6 +1242,7 @@ int main(int argc, char **argv) {
         gToolBox->SetButtonImage(IDC_OnLine,imOffline);
         gToolBox->ShowDlgItem(IDC_OnLine,1);
         gToolBox->SetDlgItemText(IDC_OnLine,"OFF-line");
+        gOptionsBox->SetButtonImage(IDC_OnLine,imOffline);
         usleep(10000);
         delete(gpSerialComm);
         gpSerialComm=NULL;
@@ -1229,6 +1258,7 @@ int main(int argc, char **argv) {
       gToolBox->SetButtonImage(IDC_OnLine,imOffline);
       gToolBox->ShowDlgItem(IDC_OnLine,1);
       gToolBox->SetDlgItemText(IDC_OnLine,"OFF");
+      gOptionsBox->SetButtonImage(IDC_OnLine,imOffline);
       SetBusyStatus(szMGMCommStatusText);
       gToolBox->EnableDlgItem(IDC_Isel,1);
       gToolBox->EnableDlgItem(IDC_GoCnc,1);

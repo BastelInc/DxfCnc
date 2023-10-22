@@ -1281,6 +1281,9 @@ bool CObjectManager::FileEinlesen(bool SizeAdjust)
       *ext3='\0';
     }
   }
+//  gWrk3DSheet->hide();
+  gWrk3DSheet->deactivate();
+
   strcpy (m_WorkPfadName,m_FilePfadName);
   char *ext2 = strrchr(m_WorkPfadName, '.');
   if (ext2) {
@@ -1331,6 +1334,7 @@ bool CObjectManager::FileEinlesen(bool SizeAdjust)
 #endif
   } else if ((strncasecmp(ext,".GCODE",7)==0)
              || (strncasecmp(ext,".NC",4)==0)
+             || (strncasecmp(ext,".GC",4)==0)
              || (strncasecmp(ext,".CNC",5)==0)) {
     LayersFreigeben(true);
     IncludeList.clear();
@@ -1420,6 +1424,7 @@ bool CObjectManager::FileEinlesen(bool SizeAdjust)
     fprintf(stderr,"Fehler : Speicher erschoepft\rDaten unvollstaendig !");
 
   Sort_Reset();
+  gWrk3DSheet->activate();
   return res || CNCInfoCnt >= 1;
 }
 //-------------------------------------------------------------

@@ -6,55 +6,60 @@
     </Plugin>
   </Plugins>
   <VirtualDirectory Name="include">
-    <File Name="BlockModel.h"/>
-    <File Name="Settings.h"/>
-    <File Name="Layers.h"/>
-    <File Name="GlDisplay.h"/>
-    <File Name="Tree.h"/>
-    <File Name="Object.h"/>
-    <File Name="CncSetup.h"/>
-    <File Name="include/basteltype.h"/>
-    <File Name="include/BastelUtils.h"/>
-    <File Name="glew.h"/>
-    <File Name="clipper.h"/>
-    <File Name="TreeView.h"/>
-    <File Name="Serialcom.h"/>
-    <File Name="Resource.h"/>
-    <File Name="ProgressStatus.h"/>
-    <File Name="MatrixTransform.h"/>
-    <File Name="LonMessage.h"/>
-    <File Name="FltkWindow.h"/>
-    <File Name="FltkDialogBox.h"/>
-    <File Name="FingerScroll.h"/>
-    <File Name="FileFolder.h"/>
-    <File Name="DxfCnc.h"/>
+    <File Name="../include/TreeView.h"/>
+    <File Name="../include/Tree.h"/>
+    <File Name="../include/Settings.h"/>
+    <File Name="../include/Serialcom.h"/>
+    <File Name="../include/Resource.h"/>
+    <File Name="../include/ProgressStatus.h"/>
+    <File Name="../include/Object.h"/>
+    <File Name="../include/NNetmgmt.h"/>
+    <File Name="../include/MatrixTransform.h"/>
+    <File Name="../include/LonMessage.h"/>
+    <File Name="../include/Layers.h"/>
+    <File Name="../include/gpc.h"/>
+    <File Name="../include/glew.h"/>
+    <File Name="../include/GlDisplay.h"/>
+    <File Name="../include/GlDialogBox.h"/>
+    <File Name="../include/GCodeObject.h"/>
+    <File Name="../include/GCodeDown.h"/>
+    <File Name="../include/FltkWindow.h"/>
+    <File Name="../include/FltkDialogBox.h"/>
+    <File Name="../include/FingerScroll.h"/>
+    <File Name="../include/FileFolder.h"/>
+    <File Name="../include/DxfCnc.h"/>
+    <File Name="../include/CncSetup.h"/>
+    <File Name="../include/clipper.h"/>
+    <File Name="../include/BlockModel.h"/>
+    <File Name="../include/BastelUtils.h"/>
+    <File Name="../include/basteltype.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="src">
-    <File Name="BlockModel.cpp"/>
-    <File Name="GCodeObject.cpp"/>
-    <File Name="Layers.cpp"/>
-    <File Name="Settings.cpp"/>
-    <File Name="PolygonObject.cpp"/>
-    <File Name="ObjectDraw.cpp"/>
-    <File Name="GlDisplay.cpp"/>
-    <File Name="Simplex.cpp"/>
-    <File Name="Object.cpp"/>
-    <File Name="Execute.cpp"/>
-    <File Name="Edit.cpp"/>
-    <File Name="CncSetup.cpp"/>
-    <File Name="clipper.cpp"/>
-    <File Name="TreeView.cpp"/>
-    <File Name="Serialcom.cpp"/>
-    <File Name="Resource.cpp"/>
-    <File Name="ProgressStatus.cpp"/>
-    <File Name="MatrixTransform.cpp"/>
-    <File Name="LonMessage.cpp"/>
-    <File Name="FltkWindow.cpp"/>
-    <File Name="FltkDialogBox.cpp"/>
-    <File Name="FingerScroll.cpp"/>
-    <File Name="FileFolder.cpp"/>
-    <File Name="DxfCnc.cpp"/>
-    <File Name="BastelUtils.cpp"/>
+    <File Name="../src/clipper.cpp"/>
+    <File Name="../src/TreeView.cpp"/>
+    <File Name="../src/Simplex.cpp"/>
+    <File Name="../src/Settings.cpp"/>
+    <File Name="../src/Serialcom.cpp"/>
+    <File Name="../src/Resource.cpp"/>
+    <File Name="../src/ProgressStatus.cpp"/>
+    <File Name="../src/PolygonObject.cpp"/>
+    <File Name="../src/ObjectDraw.cpp"/>
+    <File Name="../src/Object.cpp"/>
+    <File Name="../src/MatrixTransform.cpp"/>
+    <File Name="../src/LonMessage.cpp"/>
+    <File Name="../src/Layers.cpp"/>
+    <File Name="../src/GlDisplay.cpp"/>
+    <File Name="../src/GCodeObject.cpp"/>
+    <File Name="../src/FltkWindow.cpp"/>
+    <File Name="../src/FltkDialogBox.cpp"/>
+    <File Name="../src/FingerScroll.cpp"/>
+    <File Name="../src/FileFolder.cpp"/>
+    <File Name="../src/Execute.cpp"/>
+    <File Name="../src/Edit.cpp"/>
+    <File Name="../src/DxfCnc.cpp"/>
+    <File Name="../src/CncSetup.cpp"/>
+    <File Name="../src/BlockModel.cpp"/>
+    <File Name="../src/BastelUtils.cpp"/>
   </VirtualDirectory>
   <Description/>
   <Dependencies/>
@@ -71,18 +76,15 @@
       </Linker>
       <ResourceCompiler Options=""/>
     </GlobalSettings>
-    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g `fltk-config --cxxflags` -fpermissive -DNATIVE_FILECHOOSER `fltk-config --cxxflags` -UWIN32 -DFLTK -DSERIALCOM  -UUSE_SHADER -DBLOCKSIMULATION" C_Options="-g `fltk-config --cxxflags` -fpermissive -DNATIVE_FILECHOOSER `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
-        <IncludePath Value="Comm"/>
+    <Configuration Name="Debug" CompilerType="clang++" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-ansi;-g `fltk-config --cxxflags` -fpermissive -DNATIVE_FILECHOOSER `fltk-config --cxxflags` -UWIN32 -DFLTK -DSERIALCOM  -UUSE_SHADER -DBLOCKSIMULATION" C_Options="-g `fltk-config --cxxflags` -fpermissive -DNATIVE_FILECHOOSER `fltk-config --cxxflags` -DFRAMEBUFFER -DFLTK -DSERIALCOM " Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="/home/rolf/wrk/glew-2.1.0/include"/>
-        <IncludePath Value="NeuronComm"/>
-        <IncludePath Value="include"/>
-        <IncludePath Value="."/>
+        <IncludePath Value="../include"/>
+        <IncludePath Value="../"/>
         <IncludePath Value="/usr/local/include"/>
         <IncludePath Value="/usr/include/freetype2"/>
         <IncludePath Value="/usr/include/libpng16"/>
         <IncludePath Value="../"/>
-        <IncludePath Value="Comm"/>
         <Preprocessor Value="FINGERSCROLL"/>
       </Compiler>
       <Linker Options="-O0" Required="yes">
